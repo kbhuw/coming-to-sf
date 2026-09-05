@@ -8,14 +8,11 @@ Start with [the exact pipeline and update runbook](docs/DATA-PIPELINE.md) and [s
 
 ## Data
 
-`public/projects.json` contains the complete assembled snapshot from:
-- SF Planning Development Pipeline (`6jgi-cpb4`)
-- MOHCD Affordable Housing Pipeline (`aaxw-2cb8`)
-- SFCTA MyStreetSF project-location feed
+`public/projects.json` contains assembled records from SF Planning, MOHCD, SFCTA, SFMTA, Rec & Park, Public Works and SFPUC, plus the reviewed opening catalog. `public/business-leads.json` separately publishes registrations and selected permit leads. Eater SF and Mission Local headlines are searchable at `/updates`; Port and SFUSD directory records are searchable at `/agency-projects` and remain discovery records until reviewed.
 
-Run `npm run data:refresh` to refresh these three sources plus business registrations and building permits. It checks Socrata pagination counts, downloads source metadata, and assembles the output. Run `npm run build` and publish a new version after refreshing. This publication does not run an automatic refresh schedule.
+Run `npm run data:refresh` to refresh every connected collector and assemble the output. Then run `npm test`, `python3 -m unittest discover -s tests -p 'test_*.py'`, and `npm run build` before publishing. Reviewed announcements are preserved across refreshes; the command does not reverify their websites automatically. No scheduled refresh is enabled.
 
-The snapshot is not comprehensive coverage of every future change in SF. Reviewed business announcements and a separate registration/permit lead catalog supplement these feeds. The active park directory and SFMTA directory are connected; Public Works and SFPUC construction sources are also connected. Schools and detailed agency phases still require additional coverage. California ABC's CSV download returned HTTP 403 in both bounded retrieval attempts, so it is not included. Feed dates and these gaps are visible in the interface.
+The snapshot is not comprehensive coverage of every future change in SF. ABC and Public Health are not connected automated sources. Agency phases, locations and business announcements still require enrichment. Read the source register for precise scope and limitations; raw source counts are not a completeness percentage.
 
 Housing construction completion and transportation open-for-use estimates are preserved as separate date kinds. No timing is inferred from permit stage. Elapsed dates are shown separately from future arrivals. Coordinates must lie in the SF map bounds; unlocated projects remain in search. Transportation lines and multiple sites retain their geometry. Completed/inactive transport records are excluded. Affordable housing merges into a planning project only when its planning case matches a unique entry. Additional cross-source duplicates can remain; raw feed identifiers are retained for audit.
 
@@ -23,7 +20,8 @@ Category labels use reported housing-unit fields and keyword rules, not a separa
 
 ## Checks
 
-- `node --experimental-strip-types --test tests/timing.test.mjs`
+- `npm test`
+- `python3 -m unittest discover -s tests -p 'test_*.py'`
 - `npx tsc --noEmit`
 - `npm run build`
 
@@ -31,7 +29,7 @@ Timing checks cover missing dates, elapsed dates, inclusive window boundaries, m
 
 WebMCP tools: search_projects, open_project, focus_location, filter_projects, and read_map. Browser contract checks verified registration, valid state transitions and invalid-input rejection for all five tools. Location lookup was verified with Noe Valley and an SF civic street address, including ambiguous candidate selection.
 
-The map displays individual category icons without clustering. Visible type buttons filter Homes, Shops, Transit, or Other; arrival timing has its own selector. Color shows timing. The list opens on demand, leaving the map full width. Hover/focus reveals names and clicking opens details. Co-located records open a chooser. Initial zoom is 12.8 for a closer view.
+The map displays individual category icons without clustering. Visible type buttons filter Homes, Shops, Transit, Parks, Works, or Other; arrival timing has its own selector. Color shows timing. The list opens on demand, leaving the map full width. Hover/focus reveals names and clicking opens details. Co-located records open a chooser. Initial zoom is 12.8 for a closer view.
 
 
 Address search calls Esri directly from the browser on submission. Results are transient and not saved. Neighborhood matches zoom to 14; address matches zoom to 16. Results outside the configured SF bounds or with low match scores are rejected. The Esri lookup is an external runtime dependency.

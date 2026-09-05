@@ -44,10 +44,11 @@ npm ci
 python3 -m pip install -r scripts/requirements.txt
 npm run data:refresh
 npm test
+python3 -m unittest discover -s tests -p 'test_*.py'
 npm run build
 ```
 
-The refresh fetches Planning/MOHCD with pagination counts, reads the SFCTA public application's current read token in memory, assembles the base, collects business/permit sources and builds the public catalog. The token is not stored in committed files. A failed collector exits nonzero; do not deploy a failed refresh. Existing published artifacts remain available. No scheduled refresh has been enabled.
+The refresh fetches Planning/MOHCD with pagination counts, reads the SFCTA public application's current read token in memory, assembles the base, collects business/permit sources, SFMTA, parks, infrastructure, news and civic discovery sources, then builds the public catalog. The token is not stored in committed files. A failed collector exits nonzero; do not deploy a failed refresh. Existing published artifacts remain available. No scheduled refresh has been enabled.
 
 For a different lookback, after base collection:
 
@@ -93,7 +94,7 @@ Push reviewed changes to `main` on `kbhuw/coming-to-sf`. Vercel automatically bu
 - Announcements are manually reviewed, not automatically discovered or verified daily. No exhaustive claim for all SF openings.
 - ABC: official browser-readable September 3 daily report exists, but Python/direct bulk imports return HTTP 403. A durable permitted collection route is still needed. Do not count this as a connected automated feed.
 - Public Health review is a source candidate; no usable bulk feed connected yet.
-- Rec & Park, Public Works and SFPUC directories are connected as documented below. Port, schools and broader neighborhood reporting still need additional adapters/review.
+- Rec & Park, Public Works and SFPUC directories are connected as documented below. Port and SFUSD are connected discovery directories; their lifecycle, phases and locations still require review. Broader neighborhood reporting remains incomplete.
 - Raw permit descriptions may concern minor alterations. Keyword selection is a discovery mechanism.
 - Dates change; elapsed ranges become stale estimates automatically, not 'opened'.
 - The old city source feeds may retain completed records. Only reviewed evidence can override that status.
@@ -155,3 +156,9 @@ The collector writes `data/civic.json` atomically only after every request succe
 `catalog/civic-reviews.json` is the editable evidence ledger keyed by exact project URL. Each review records `status`, `checkedAt`, `evidenceUrl` and a factual `note`. The collector gives entries URL-hash IDs and retains all matching SFUSD program URLs. A reviewed `opened` status overrides directory membership. After editing reviews, rerun the collector and catalog assembly.
 
 The `/agency-projects` page supports text search and agency filtering. These discovery records intentionally do not enter the default map: lifecycle, distinct phases, location and potential overlap with existing city records need review. To promote an opening, verify those facts and add evidence to `catalog/announcements.json`, using an explicit `mergeInto` when it matches an existing project. Do not infer dates from an agency page update, budget allocation or stale schedule chart. Tests in `tests/test_civic.py` cover parent-navigation exclusion, directory structure failure and unknown completion handling.
+
+## Final full-refresh verification, September 5, 2026
+
+A second fresh clone of `0df1395`, with no ignored source cache, successfully ran the complete `scripts/sync.py` pipeline, including both news feeds and Port/SFUSD detail collection. `npm ci` installed dependencies from the lockfile. The resulting snapshot contains 3,060 assembled records, including 22 reviewed announcements, plus 10,930 separate business/permit leads; discovery retains 41 headlines and 55 civic directory records. SFMTA now contributes 382 unique URLs with 108 completed, three more completed records than the earlier run. These source changes are retained without treating them as new upcoming projects. The refreshed public artifacts were copied back into the publication checkout.
+
+Verification includes all JavaScript catalog/timing/transport/tile tests, all Python parser tests, a production build, anonymous public JSON downloads, live WebMCP category filtering, retail and fitness time filtering, and a rendered announcement evidence card. Earlier documented browser checks cover address/neighborhood zoom, overlap selection, clear-filter behavior and lead loading. These checks establish the implemented scope; they do not measure a percentage of all future SF openings.
