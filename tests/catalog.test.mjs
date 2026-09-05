@@ -44,3 +44,12 @@ test('infrastructure sources survive assembly and completion status overrides fu
   assert.equal(project.date,null);
  }
 });
+
+test('reviewed report additions retain their explicit soft-opening and gallery dates',()=>{
+ assert.equal(p.find(x=>x.id==='ann-brunos').arrival.start,'2026-09-12');
+ assert.match(p.find(x=>x.id==='ann-brunos').arrivalLabel,/soft opening/);
+ assert.equal(p.find(x=>x.id==='ann-sin-miedo').arrival.start,'2026-09-19');
+ assert.equal(p.find(x=>x.id==='ann-portal-cinema').arrival.end,'2026-10-31');
+ const queue=load('public/news-review.json');
+ for(const item of queue.items)for(const id of item.review.projectIds||[])assert.ok(p.some(x=>x.id===id));
+});

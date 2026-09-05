@@ -25,3 +25,5 @@ Never report the number of connected sources as a completeness percentage. Each 
 |---|---|---|
 | Public Works | Automated directory and published map | All cards/markers; directory status preserved |
 | SFPUC | Automated construction directory and detail milestones | San Francisco section only; cross-boundary projects may be listed by agency |
+
+Eater SF and Mission Local feeds are automated discovery sources, shown at `/updates`. They collect headlines for review, not verified map openings. SFist and Hoodline feed access returned 403.

@@ -174,5 +174,38 @@
     "provider": "Esri World Geocoding",
     "checkedAt": "2026-09-05",
     "approximate": true
+  },
+  "2389 Mission St": {
+    "coordinates": [
+      -122.418803964937,
+      37.75895609416
+    ],
+    "matchedAddress": "2389 Mission St, San Francisco, California, 94110",
+    "score": 100,
+    "provider": "Esri World Geocoding",
+    "checkedAt": "2026-09-05",
+    "approximate": true
+  },
+  "2831 Mission St": {
+    "coordinates": [
+      -122.418032075473,
+      37.75173118699
+    ],
+    "matchedAddress": "2831 Mission St, San Francisco, California, 94110",
+    "score": 100,
+    "provider": "Esri World Geocoding",
+    "checkedAt": "2026-09-05",
+    "approximate": true
+  },
+  "3293 Mission St": {
+    "coordinates": [
+      -122.420528373877,
+      37.744129974276
+    ],
+    "matchedAddress": "3293 Mission St, San Francisco, California, 94110",
+    "score": 100,
+    "provider": "Esri World Geocoding",
+    "checkedAt": "2026-09-05",
+    "approximate": true
   }
 }

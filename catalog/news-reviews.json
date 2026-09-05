@@ -1,0 +1,17 @@
+{
+  "https://missionlocal.org/2026/09/brunos-nightclub-set-to-re-open-next-week-after-6-year-closure/": {
+    "status": "added",
+    "projectIds": [
+      "ann-brunos"
+    ],
+    "reviewedAt": "2026-09-05"
+  },
+  "https://missionlocal.org/2026/09/a-new-art-gallery-and-cinema-coming-to-the-mission/": {
+    "status": "added",
+    "projectIds": [
+      "ann-sin-miedo",
+      "ann-portal-cinema"
+    ],
+    "reviewedAt": "2026-09-05"
+  }
+}

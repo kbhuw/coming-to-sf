@@ -44,4 +44,5 @@ subprocess.run([sys.executable,str(ROOT/'scripts'/'collect_sources.py')],check=T
 subprocess.run([sys.executable,str(ROOT/'scripts'/'collect_sfmta.py')],check=True)
 subprocess.run([sys.executable,str(ROOT/'scripts'/'collect_parks.py')],check=True)
 subprocess.run([sys.executable,str(ROOT/'scripts'/'collect_infrastructure.py')],check=True)
+subprocess.run([sys.executable,str(ROOT/'scripts'/'collect_news.py')],check=True)
 subprocess.run([sys.executable,str(ROOT/'scripts'/'build_catalog.py')],check=True)

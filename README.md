@@ -4,7 +4,7 @@ A map-first publication of upcoming San Francisco projects, colored by published
 
 ## Update this project
 
-Start with [the exact pipeline and update runbook](docs/DATA-PIPELINE.md) and [source register](docs/SOURCES.md). `npm run data:refresh` rebuilds the structured sources and reviewed catalog. No scheduled refresh is enabled.
+Start with [the exact pipeline and update runbook](docs/DATA-PIPELINE.md) and [source register](docs/SOURCES.md). `npm run data:refresh` rebuilds the structured sources and reviewed catalog. No scheduled refresh is enabled. The `/updates` page exposes the retained Eater SF / Mission Local headline queue for evidence review.
 
 ## Data
 

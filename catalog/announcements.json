@@ -459,5 +459,95 @@
       "label": "By end of 2026 · reported target",
       "sourceUrl": "https://www.tntsupermarket.us/aboutus/newsroom/104"
     }
+  },
+  {
+    "id": "brunos",
+    "name": "Bruno’s · reopening",
+    "address": "2389 Mission St",
+    "kindOverride": "bar",
+    "category": "Food & shops",
+    "summary": "Soft reopening after a six-year closure. Weekend test events precede a tentative October grand opening.",
+    "evidenceType": "reporting",
+    "recordLabel": "Announced reopening",
+    "lifecycle": "announced",
+    "reviewedAt": "2026-09-05",
+    "evidence": [
+      {
+        "url": "https://missionlocal.org/2026/09/brunos-nightclub-set-to-re-open-next-week-after-6-year-closure/",
+        "publishedAt": "2026-09-04",
+        "checkedAt": "2026-09-05",
+        "type": "reporting"
+      }
+    ],
+    "arrivalLabel": "September 12, 2026 · reported soft opening",
+    "arrival": {
+      "start": "2026-09-12",
+      "end": "2026-09-12",
+      "precision": "day",
+      "label": "September 12, 2026 · reported soft opening",
+      "sourceUrl": "https://missionlocal.org/2026/09/brunos-nightclub-set-to-re-open-next-week-after-6-year-closure/"
+    }
+  },
+  {
+    "id": "sin-miedo",
+    "name": "Sin Miedo Gallery",
+    "address": "2831 Mission St",
+    "kindOverride": "other",
+    "category": "Other places",
+    "summary": "Gallery and creative space with workshops, classes, a library and a shop.",
+    "evidenceType": "reporting",
+    "recordLabel": "Announced opening",
+    "lifecycle": "announced",
+    "reviewedAt": "2026-09-05",
+    "evidence": [
+      {
+        "url": "https://missionlocal.org/2026/09/a-new-art-gallery-and-cinema-coming-to-the-mission/",
+        "publishedAt": "2026-09-02",
+        "checkedAt": "2026-09-05",
+        "type": "reporting"
+      }
+    ],
+    "arrivalLabel": "September 19, 2026 · reported opening",
+    "arrival": {
+      "start": "2026-09-19",
+      "end": "2026-09-19",
+      "precision": "day",
+      "label": "September 19, 2026 · reported opening",
+      "sourceUrl": "https://missionlocal.org/2026/09/a-new-art-gallery-and-cinema-coming-to-the-mission/"
+    }
+  },
+  {
+    "id": "portal-cinema",
+    "name": "The Portal Cinema",
+    "address": "3293 Mission St",
+    "kindOverride": "other",
+    "category": "Other places",
+    "summary": "New independent cinema in the Mission/Bernal area.",
+    "evidenceType": "operator",
+    "recordLabel": "Announced opening",
+    "lifecycle": "announced",
+    "reviewedAt": "2026-09-05",
+    "evidence": [
+      {
+        "url": "https://theportalcinema.com/",
+        "checkedAt": "2026-09-05",
+        "type": "operator"
+      },
+      {
+        "url": "https://missionlocal.org/2026/09/a-new-art-gallery-and-cinema-coming-to-the-mission/",
+        "publishedAt": "2026-09-02",
+        "checkedAt": "2026-09-05",
+        "type": "reporting",
+        "claim": "Reports the Mission Street address."
+      }
+    ],
+    "arrivalLabel": "October 2026 · operator target",
+    "arrival": {
+      "start": "2026-10-01",
+      "end": "2026-10-31",
+      "precision": "month",
+      "label": "October 2026 · operator target",
+      "sourceUrl": "https://theportalcinema.com/"
+    }
   }
 ]
