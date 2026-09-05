@@ -53,3 +53,14 @@ test('reviewed report additions retain their explicit soft-opening and gallery d
  const queue=load('public/news-review.json');
  for(const item of queue.items)for(const id of item.review.projectIds||[])assert.ok(p.some(x=>x.id===id));
 });
+
+test('retail and fitness opening evidence retains date precision and conflicts',()=>{
+ const fashion=p.find(x=>x.id==='ann-mcmullen-maiden-lane');
+ const gym=p.find(x=>x.id==='ann-fitness-sf-polk');
+ const books=p.find(x=>x.id==='ann-chapter-3-bayview');
+ for(const x of [fashion,gym,books]){assert.ok(x.coordinates);assert.equal(x.lifecycle,'announced');assert.equal(x.category,'Food & shops');}
+ assert.equal(fashion.kindOverride,'retail');assert.equal(fashion.arrival.precision,'month');
+ assert.equal(gym.kindOverride,'fitness');assert.equal(gym.arrival.start,'2026-10-01');assert.equal(gym.arrival.end,'2026-10-01');
+ assert.ok(gym.evidence.some(e=>e.note?.includes('September')));
+ assert.equal(books.kindOverride,'retail');assert.equal(books.arrival.precision,'year');assert.equal(books.arrival.end,'2026-12-31');
+});

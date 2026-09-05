@@ -207,5 +207,38 @@
     "provider": "Esri World Geocoding",
     "checkedAt": "2026-09-05",
     "approximate": true
+  },
+  "135 Maiden Ln": {
+    "coordinates": [
+      -122.405732889849,
+      37.788081237948
+    ],
+    "matchedAddress": "135 Maiden Ln, San Francisco, California, 94108",
+    "score": 100,
+    "provider": "Esri World Geocoding",
+    "checkedAt": "2026-09-05",
+    "approximate": true
+  },
+  "1600 Jackson St": {
+    "coordinates": [
+      -122.421807703759,
+      37.794413598159
+    ],
+    "matchedAddress": "1600 Jackson St, San Francisco, California, 94109",
+    "score": 100,
+    "provider": "Esri World Geocoding",
+    "checkedAt": "2026-09-05",
+    "approximate": true
+  },
+  "4512 3rd St": {
+    "coordinates": [
+      -122.390136598791,
+      37.736974594992
+    ],
+    "matchedAddress": "4512 3rd St, San Francisco, California, 94124",
+    "score": 100,
+    "provider": "Esri World Geocoding",
+    "checkedAt": "2026-09-05",
+    "approximate": true
   }
 }

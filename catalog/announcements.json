@@ -549,5 +549,99 @@
       "label": "October 2026 · operator target",
       "sourceUrl": "https://theportalcinema.com/"
     }
+  },
+  {
+    "id": "mcmullen-maiden-lane",
+    "name": "McMullen · Maiden Lane",
+    "address": "135 Maiden Ln",
+    "kindOverride": "retail",
+    "category": "Food & shops",
+    "summary": "Fashion flagship with clothing, accessories and styling spaces. The existing Sacramento Street store remains open.",
+    "evidenceType": "operator",
+    "recordLabel": "Announced opening",
+    "lifecycle": "announced",
+    "reviewedAt": "2026-09-05",
+    "evidence": [
+      {
+        "url": "https://shopmcmullen.com/pages/a-new-chapter-maiden-lane-october-2026",
+        "checkedAt": "2026-09-05",
+        "type": "operator"
+      }
+    ],
+    "arrivalLabel": "October 2026 · operator target",
+    "arrival": {
+      "start": "2026-10-01",
+      "end": "2026-10-31",
+      "precision": "month",
+      "label": "October 2026 · operator target",
+      "sourceUrl": "https://shopmcmullen.com/pages/a-new-chapter-maiden-lane-october-2026"
+    }
+  },
+  {
+    "id": "fitness-sf-polk",
+    "name": "FITNESS SF Polk",
+    "address": "1600 Jackson St",
+    "kindOverride": "fitness",
+    "category": "Food & shops",
+    "summary": "New gym in the former Lombardi Sports building. Operator blog explicitly targets October 1; some presale copy still says September. Presale-office hours are not gym-opening hours.",
+    "evidenceType": "operator",
+    "recordLabel": "Announced opening",
+    "lifecycle": "announced",
+    "reviewedAt": "2026-09-05",
+    "evidence": [
+      {
+        "url": "https://blog.fitnesssf.com/san-franciscos-biggest-weight-floor-opens-october-2026",
+        "checkedAt": "2026-09-05",
+        "type": "operator"
+      },
+      {
+        "url": "https://www.fitnesssf.com/location/sf-polk",
+        "checkedAt": "2026-09-05",
+        "type": "operator",
+        "note": "Location banner says October 2026; embedded membership copy still says September 2026. Address verified here."
+      }
+    ],
+    "arrivalLabel": "October 1, 2026 · operator target; conflicting older copy",
+    "arrival": {
+      "start": "2026-10-01",
+      "end": "2026-10-01",
+      "precision": "day",
+      "label": "October 1, 2026 · operator target; conflicting older copy",
+      "sourceUrl": "https://blog.fitnesssf.com/san-franciscos-biggest-weight-floor-opens-october-2026"
+    }
+  },
+  {
+    "id": "chapter-3-bayview",
+    "name": "Chapter 3 Bookstore & Cafe",
+    "address": "4512 3rd St",
+    "kindOverride": "retail",
+    "category": "Food & shops",
+    "summary": "Planned Bayview bookstore and cafe with community events. Reporting gives a 2026 target, without a confirmed month.",
+    "evidenceType": "reporting",
+    "recordLabel": "Announced opening",
+    "lifecycle": "announced",
+    "reviewedAt": "2026-09-05",
+    "evidence": [
+      {
+        "url": "https://www.axios.com/local/san-francisco/2026/07/29/san-francisco-bookstore-comeback",
+        "checkedAt": "2026-09-05",
+        "type": "reporting"
+      },
+      {
+        "url": "https://www.shelf-awareness.com/issue.html?issue=5269",
+        "publishedAt": "2026-07-09",
+        "checkedAt": "2026-09-05",
+        "type": "reporting",
+        "note": "Business name, address and planned bookstore/cafe verified in Chapter 3 item."
+      }
+    ],
+    "arrivalLabel": "2026 · reported target; month unknown",
+    "arrival": {
+      "start": "2026-01-01",
+      "end": "2026-12-31",
+      "precision": "year",
+      "label": "2026 · reported target; month unknown",
+      "sourceUrl": "https://www.axios.com/local/san-francisco/2026/07/29/san-francisco-bookstore-comeback"
+    }
   }
 ]

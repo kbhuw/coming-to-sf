@@ -34,3 +34,15 @@ Port and SFUSD are automated **discovery** sources at `/agency-projects`, with p
 - SFUSD: every leaf subpage under the active 2016 and 2024 bond program navigation. These include broad programs and potentially completed work. Union by exact URL; preserve all parent program URLs. This is not the entire SFUSD capital-project universe.
 - Mission Bay School is explicitly reviewed as opened, based on SFUSD's August 6, 2026 opening announcement at https://www.sfusd.edu/bond. Separate work packages can remain ongoing.
 - Page modification dates remain metadata, never opening dates. Unresolved completion is JSON `null`, not a claim that work remains unfinished.
+
+### Retail and fitness review, September 5, 2026
+
+Added three named openings after checking for existing map records at the same address:
+
+- **McMullen, 135 Maiden Lane**: operator's flagship announcement explicitly says October 2026. Preserve month precision. Sacramento Street remains a separate existing store. https://shopmcmullen.com/pages/a-new-chapter-maiden-lane-october-2026
+- **FITNESS SF Polk, 1600 Jackson Street**: operator blog explicitly says October 1, 2026. Location banner agrees on October, but embedded presale copy still says September. The catalog description and evidence note preserve that conflict. Presale office hours do not mean the gym is open. https://blog.fitnesssf.com/san-franciscos-biggest-weight-floor-opens-october-2026 and https://www.fitnesssf.com/location/sf-polk
+- **Chapter 3 Bookstore & Cafe, 4512 3rd Street**: Shelf Awareness's July 9 issue verifies the name/address and planned use, citing Mission Local. Axios July 29 reports a target later in 2026. Keep a year-wide interval and explicitly unknown month; matching the three-month filter does not promise opening within three months. https://www.shelf-awareness.com/issue.html?issue=5269 and https://www.axios.com/local/san-francisco/2026/07/29/san-francisco-bookstore-comeback
+
+**Unresolved candidate:** Article furniture, 2299 Alameda Street. The May 14 operator press release targets fall 2026, but the current store page invites visits/design appointments without a clear upcoming label. Do not promote the older target until actual opening status is resolved. Evidence: https://www.prnewswire.com/news-releases/article-announces-first-us-furniture-stores-302771489.html and https://www.article.com/c/store-san-francisco-design-district .
+
+To update these entries, edit `catalog/announcements.json`, retain prior conflicting evidence with explanatory notes, run `npm run data:geocode` for new addresses, then `npm run data:build`, `npm test`, and `npm run build`. Public coordinates are approximate address geocodes, with provider, score and check date in `catalog/geocodes.json`. These are manually reviewed additions, not an automated complete retail-opening feed.
