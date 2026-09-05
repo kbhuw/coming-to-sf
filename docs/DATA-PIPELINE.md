@@ -165,7 +165,7 @@ Verification includes all JavaScript catalog/timing/transport/tile tests, all Py
 
 ## kush.pw hosting and attribution
 
-The application is built with Next.js `basePath: '/coming-to-sf'`. All direct fetches, worker/tile URLs, public downloads and plain anchor links use that prefix. The Vercel root redirects to the map path. The `kushbhuwalka-web` host project forwards `/coming-to-sf/:path*` to `https://coming-to-sf.vercel.app/coming-to-sf/:path*`; the app remains deployed from this repository. Do not strip the prefix in the host rewrite or route the host's entire `/_next` namespace to this app.
+The application is built with Next.js `basePath: '/coming-to-sf'`. All direct fetches, worker/tile URLs, public downloads and plain anchor links use that prefix. The Vercel root redirects to the map path. The `kushbhuwalka-web` host project explicitly rewrites `/coming-to-sf` to the same upstream path without a trailing slash and redirects `/coming-to-sf/` to that canonical path. It forwards `/coming-to-sf/:path*` to `https://coming-to-sf.vercel.app/coming-to-sf/:path*`; the app remains deployed from this repository. Do not strip the prefix in the host rewrite or route the host's entire `/_next` namespace to this app.
 
 The shared layout includes the linked “made with puffle.ai” badge. `public/puffle-logo.svg` comes from the official `DevelopIQ-ai/puffle-next` public logo asset. No changes to the Puffle marketing site are needed.
 
