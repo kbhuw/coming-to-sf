@@ -93,7 +93,7 @@ Push reviewed changes to `main` on `kbhuw/coming-to-sf`. Vercel automatically bu
 - Announcements are manually reviewed, not automatically discovered or verified daily. No exhaustive claim for all SF openings.
 - ABC: official browser-readable September 3 daily report exists, but Python/direct bulk imports return HTTP 403. A durable permitted collection route is still needed. Do not count this as a connected automated feed.
 - Public Health review is a source candidate; no usable bulk feed connected yet.
-- Rec & Park, Public Works, SFPUC, Port, schools and neighborhood reporting need additional adapters/review beyond SFCTA.
+- Rec & Park, Public Works and SFPUC directories are connected as documented below. Port, schools and broader neighborhood reporting still need additional adapters/review.
 - Raw permit descriptions may concern minor alterations. Keyword selection is a discovery mechanism.
 - Dates change; elapsed ranges become stale estimates automatically, not 'opened'.
 - The old city source feeds may retain completed records. Only reviewed evidence can override that status.
@@ -129,3 +129,9 @@ The same adapter collects all 34 links under SFPUC's San Francisco construction 
 Construction Start is preserved as source context and is never used for arrival coloring. `arrival_ranges.py` converts only an explicit Construction End label into a month, spring/summer/fall, or year interval. Spring means March-May, summer June-August, fall September-November. "End of 2026" remains the whole-year interval. Ambiguous winter, mixed phase labels, relative durations and early/late ranges remain unresolved text. Completed status overrides a future target: Noe Valley Water Main Replacement is excluded from the upcoming view even though its source also retains a November 2026 target.
 
 The Works filter and wrench icons include both source groups. `npm run data:refresh` runs this adapter; to refresh it alone, run `python3 scripts/collect_infrastructure.py` then `npm run data:build`. Parser regression checks and the public-record coverage test verify missing map statuses, regional scoping, date ambiguity, source retention and completed-status handling.
+
+## Clean-checkout verification, September 5, 2026
+
+Cloned commit `90563d7` into a fresh temporary checkout with no `data/` directory, then ran `python3 scripts/sync.py`. All nine structured source groups completed and assembly produced 3,051 base/agency/announcement records plus 10,930 business/permit leads. The rolling one-year scope now begins September 5, 2025: 9,906 registrations and 23,650 permits, of which 1,024 became business leads. These differ from September 4 counts because the lower bound advanced; historical counts above are dated evidence, not invariants. The rebuilt public outputs were copied into the publication checkout and tested again.
+
+The basemap archive occasionally resets HTTP connections. The tile route now allows two attempts, each with a 12-second timeout, then returns an uncached 503. Permanent 4xx responses are not retried. Tests cover a successful retry, a permanent missing tile, and exhausted retries. This does not guarantee archive uptime.
