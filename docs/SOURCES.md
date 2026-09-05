@@ -27,3 +27,10 @@ Never report the number of connected sources as a completeness percentage. Each 
 | SFPUC | Automated construction directory and detail milestones | San Francisco section only; cross-boundary projects may be listed by agency |
 
 Eater SF and Mission Local feeds are automated discovery sources, shown at `/updates`. They collect headlines for review, not verified map openings. SFist and Hoodline feed access returned 403.
+
+Port and SFUSD are automated **discovery** sources at `/agency-projects`, with public records at `/civic-directory.json`. They are listed separately from verified map evidence in `source-health.json`:
+
+- Port: every card under **Projects In Development** at https://www.sfport.com/projects-programs. Excludes broad waterfront policies and the completed archive. Directory membership alone does not prove current construction or an opening date.
+- SFUSD: every leaf subpage under the active 2016 and 2024 bond program navigation. These include broad programs and potentially completed work. Union by exact URL; preserve all parent program URLs. This is not the entire SFUSD capital-project universe.
+- Mission Bay School is explicitly reviewed as opened, based on SFUSD's August 6, 2026 opening announcement at https://www.sfusd.edu/bond. Separate work packages can remain ongoing.
+- Page modification dates remain metadata, never opening dates. Unresolved completion is JSON `null`, not a claim that work remains unfinished.
