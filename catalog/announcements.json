@@ -1,0 +1,463 @@
+[
+  {
+    "id": "bayview-oyster",
+    "name": "Bayview Oyster Bar",
+    "address": "5114 3rd St",
+    "kindOverride": "restaurant",
+    "category": "Food & shops",
+    "summary": "New Orleans-style seafood.",
+    "evidenceType": "reporting",
+    "recordLabel": "Announced opening",
+    "lifecycle": "announced",
+    "reviewedAt": "2026-09-05",
+    "evidence": [
+      {
+        "url": "https://www.theinfatuation.com/san-francisco/guides/san-francisco-fall-restaurant-openings-2026",
+        "publishedAt": "2026-09-01",
+        "checkedAt": "2026-09-05",
+        "type": "reporting"
+      }
+    ],
+    "arrivalLabel": "Fall 2026 · reported target",
+    "arrival": {
+      "start": "2026-09-01",
+      "end": "2026-11-30",
+      "precision": "season",
+      "label": "Fall 2026 · reported target",
+      "sourceUrl": "https://www.theinfatuation.com/san-francisco/guides/san-francisco-fall-restaurant-openings-2026"
+    }
+  },
+  {
+    "id": "al-carajo",
+    "name": "Al Carajo Breakfast Burrito",
+    "address": "683 Geary St",
+    "kindOverride": "restaurant",
+    "category": "Food & shops",
+    "summary": "Breakfast burrito specialist.",
+    "evidenceType": "reporting",
+    "recordLabel": "Announced opening",
+    "lifecycle": "announced",
+    "reviewedAt": "2026-09-05",
+    "evidence": [
+      {
+        "url": "https://www.theinfatuation.com/san-francisco/guides/san-francisco-fall-restaurant-openings-2026",
+        "publishedAt": "2026-09-01",
+        "checkedAt": "2026-09-05",
+        "type": "reporting"
+      }
+    ],
+    "arrivalLabel": "Fall 2026 · reported target",
+    "arrival": {
+      "start": "2026-09-01",
+      "end": "2026-11-30",
+      "precision": "season",
+      "label": "Fall 2026 · reported target",
+      "sourceUrl": "https://www.theinfatuation.com/san-francisco/guides/san-francisco-fall-restaurant-openings-2026"
+    }
+  },
+  {
+    "id": "florecita",
+    "name": "Florecita",
+    "address": "3349 23rd St",
+    "kindOverride": "cafe",
+    "category": "Food & shops",
+    "summary": "Bakery relocating to larger premises.",
+    "evidenceType": "reporting",
+    "recordLabel": "Announced opening",
+    "lifecycle": "announced",
+    "reviewedAt": "2026-09-05",
+    "evidence": [
+      {
+        "url": "https://www.theinfatuation.com/san-francisco/guides/san-francisco-fall-restaurant-openings-2026",
+        "publishedAt": "2026-09-01",
+        "checkedAt": "2026-09-05",
+        "type": "reporting"
+      }
+    ],
+    "arrivalLabel": "Fall 2026 · reported target",
+    "arrival": {
+      "start": "2026-09-01",
+      "end": "2026-11-30",
+      "precision": "season",
+      "label": "Fall 2026 · reported target",
+      "sourceUrl": "https://www.theinfatuation.com/san-francisco/guides/san-francisco-fall-restaurant-openings-2026"
+    }
+  },
+  {
+    "id": "monami",
+    "name": "Monami",
+    "address": "2001 Fillmore St",
+    "kindOverride": "restaurant",
+    "category": "Food & shops",
+    "summary": "Korean steakhouse from Ssal team.",
+    "evidenceType": "reporting",
+    "recordLabel": "Announced opening",
+    "lifecycle": "announced",
+    "reviewedAt": "2026-09-05",
+    "evidence": [
+      {
+        "url": "https://www.theinfatuation.com/san-francisco/guides/san-francisco-fall-restaurant-openings-2026",
+        "publishedAt": "2026-09-01",
+        "checkedAt": "2026-09-05",
+        "type": "reporting"
+      }
+    ],
+    "arrivalLabel": "Fall 2026 · reported target",
+    "arrival": {
+      "start": "2026-09-01",
+      "end": "2026-11-30",
+      "precision": "season",
+      "label": "Fall 2026 · reported target",
+      "sourceUrl": "https://www.theinfatuation.com/san-francisco/guides/san-francisco-fall-restaurant-openings-2026"
+    }
+  },
+  {
+    "id": "jupiter-room",
+    "name": "Jupiter Room",
+    "address": "2065 Polk St",
+    "kindOverride": "bar",
+    "category": "Food & shops",
+    "summary": "Martini bar with late-night food.",
+    "evidenceType": "reporting",
+    "recordLabel": "Announced opening",
+    "lifecycle": "announced",
+    "reviewedAt": "2026-09-05",
+    "evidence": [
+      {
+        "url": "https://www.theinfatuation.com/san-francisco/guides/san-francisco-fall-restaurant-openings-2026",
+        "publishedAt": "2026-09-01",
+        "checkedAt": "2026-09-05",
+        "type": "reporting"
+      }
+    ],
+    "arrivalLabel": "Fall 2026 · reported target",
+    "arrival": {
+      "start": "2026-09-01",
+      "end": "2026-11-30",
+      "precision": "season",
+      "label": "Fall 2026 · reported target",
+      "sourceUrl": "https://www.theinfatuation.com/san-francisco/guides/san-francisco-fall-restaurant-openings-2026"
+    }
+  },
+  {
+    "id": "la-kalidad",
+    "name": "La Kalidad",
+    "address": "680A 2nd St",
+    "kindOverride": "cafe",
+    "category": "Food & shops",
+    "summary": "Filipino bakery’s first permanent space.",
+    "evidenceType": "reporting",
+    "recordLabel": "Announced opening",
+    "lifecycle": "announced",
+    "reviewedAt": "2026-09-05",
+    "evidence": [
+      {
+        "url": "https://www.theinfatuation.com/san-francisco/guides/san-francisco-fall-restaurant-openings-2026",
+        "publishedAt": "2026-09-01",
+        "checkedAt": "2026-09-05",
+        "type": "reporting"
+      }
+    ],
+    "arrivalLabel": "Fall 2026 · reported target",
+    "arrival": {
+      "start": "2026-09-01",
+      "end": "2026-11-30",
+      "precision": "season",
+      "label": "Fall 2026 · reported target",
+      "sourceUrl": "https://www.theinfatuation.com/san-francisco/guides/san-francisco-fall-restaurant-openings-2026"
+    }
+  },
+  {
+    "id": "sergeant-ma",
+    "name": "Sergeant Ma",
+    "address": "185 Berry St",
+    "kindOverride": "restaurant",
+    "category": "Food & shops",
+    "summary": "Seasonal Asian-influenced restaurant.",
+    "evidenceType": "reporting",
+    "recordLabel": "Announced opening",
+    "lifecycle": "announced",
+    "reviewedAt": "2026-09-05",
+    "evidence": [
+      {
+        "url": "https://www.theinfatuation.com/san-francisco/guides/san-francisco-fall-restaurant-openings-2026",
+        "publishedAt": "2026-09-01",
+        "checkedAt": "2026-09-05",
+        "type": "reporting"
+      }
+    ],
+    "arrivalLabel": "Fall 2026 · reported target",
+    "arrival": {
+      "start": "2026-09-01",
+      "end": "2026-11-30",
+      "precision": "season",
+      "label": "Fall 2026 · reported target",
+      "sourceUrl": "https://www.theinfatuation.com/san-francisco/guides/san-francisco-fall-restaurant-openings-2026"
+    }
+  },
+  {
+    "id": "rize-up",
+    "name": "Rize Up",
+    "address": "1160 Howard St",
+    "kindOverride": "cafe",
+    "category": "Food & shops",
+    "summary": "Sourdough bakery adding a café.",
+    "evidenceType": "reporting",
+    "recordLabel": "Announced opening",
+    "lifecycle": "announced",
+    "reviewedAt": "2026-09-05",
+    "evidence": [
+      {
+        "url": "https://www.theinfatuation.com/san-francisco/guides/san-francisco-fall-restaurant-openings-2026",
+        "publishedAt": "2026-09-01",
+        "checkedAt": "2026-09-05",
+        "type": "reporting"
+      }
+    ],
+    "arrivalLabel": "Fall 2026 · reported target",
+    "arrival": {
+      "start": "2026-09-01",
+      "end": "2026-11-30",
+      "precision": "season",
+      "label": "Fall 2026 · reported target",
+      "sourceUrl": "https://www.theinfatuation.com/san-francisco/guides/san-francisco-fall-restaurant-openings-2026"
+    }
+  },
+  {
+    "id": "kaiyo-handroll",
+    "name": "Kaiyō Handroll Bar",
+    "address": "1838 Union St",
+    "kindOverride": "restaurant",
+    "category": "Food & shops",
+    "summary": "Handroll-focused change of concept.",
+    "evidenceType": "reporting",
+    "recordLabel": "Announced opening",
+    "lifecycle": "announced",
+    "reviewedAt": "2026-09-05",
+    "evidence": [
+      {
+        "url": "https://www.theinfatuation.com/san-francisco/guides/san-francisco-fall-restaurant-openings-2026",
+        "publishedAt": "2026-09-01",
+        "checkedAt": "2026-09-05",
+        "type": "reporting"
+      }
+    ],
+    "arrivalLabel": "Fall 2026 · reported target",
+    "arrival": {
+      "start": "2026-09-01",
+      "end": "2026-11-30",
+      "precision": "season",
+      "label": "Fall 2026 · reported target",
+      "sourceUrl": "https://www.theinfatuation.com/san-francisco/guides/san-francisco-fall-restaurant-openings-2026"
+    }
+  },
+  {
+    "id": "handroll-hawker",
+    "name": "Handroll Hawker",
+    "address": "2360 Polk St",
+    "kindOverride": "restaurant",
+    "category": "Food & shops",
+    "summary": "Takeaway handroll shop.",
+    "evidenceType": "reporting",
+    "recordLabel": "Announced opening",
+    "lifecycle": "announced",
+    "reviewedAt": "2026-09-05",
+    "evidence": [
+      {
+        "url": "https://www.theinfatuation.com/san-francisco/guides/san-francisco-fall-restaurant-openings-2026",
+        "publishedAt": "2026-09-01",
+        "checkedAt": "2026-09-05",
+        "type": "reporting"
+      }
+    ],
+    "arrivalLabel": "Fall 2026 · reported target",
+    "arrival": {
+      "start": "2026-09-01",
+      "end": "2026-11-30",
+      "precision": "season",
+      "label": "Fall 2026 · reported target",
+      "sourceUrl": "https://www.theinfatuation.com/san-francisco/guides/san-francisco-fall-restaurant-openings-2026"
+    }
+  },
+  {
+    "id": "lorella",
+    "name": "Lorella",
+    "address": "2139A Polk St",
+    "kindOverride": "cafe",
+    "category": "Food & shops",
+    "summary": "Bakery and café.",
+    "evidenceType": "reporting",
+    "recordLabel": "Announced opening",
+    "lifecycle": "announced",
+    "reviewedAt": "2026-09-05",
+    "evidence": [
+      {
+        "url": "https://www.theinfatuation.com/san-francisco/guides/san-francisco-fall-restaurant-openings-2026",
+        "publishedAt": "2026-09-01",
+        "checkedAt": "2026-09-05",
+        "type": "reporting"
+      }
+    ],
+    "arrivalLabel": "Fall 2026 · reported target",
+    "arrival": {
+      "start": "2026-09-01",
+      "end": "2026-11-30",
+      "precision": "season",
+      "label": "Fall 2026 · reported target",
+      "sourceUrl": "https://www.theinfatuation.com/san-francisco/guides/san-francisco-fall-restaurant-openings-2026"
+    }
+  },
+  {
+    "id": "pasta-cole",
+    "name": "Pasta Supply Co · Cole Valley",
+    "address": "919 Cole St",
+    "kindOverride": "restaurant",
+    "category": "Food & shops",
+    "summary": "Third location with pasta retail.",
+    "evidenceType": "reporting",
+    "recordLabel": "Announced opening",
+    "lifecycle": "announced",
+    "reviewedAt": "2026-09-05",
+    "evidence": [
+      {
+        "url": "https://www.theinfatuation.com/san-francisco/guides/san-francisco-fall-restaurant-openings-2026",
+        "publishedAt": "2026-09-01",
+        "checkedAt": "2026-09-05",
+        "type": "reporting"
+      }
+    ],
+    "arrivalLabel": "Fall 2026 · reported target",
+    "arrival": {
+      "start": "2026-09-01",
+      "end": "2026-11-30",
+      "precision": "season",
+      "label": "Fall 2026 · reported target",
+      "sourceUrl": "https://www.theinfatuation.com/san-francisco/guides/san-francisco-fall-restaurant-openings-2026"
+    }
+  },
+  {
+    "id": "ritual-california",
+    "name": "Ritual Coffee · California Street",
+    "address": "255 California St",
+    "kindOverride": "cafe",
+    "category": "Food & shops",
+    "summary": "Ritual’s founder announces a new café at California and Battery, in the former Torrefazione Italia / Starbucks space.",
+    "evidenceType": "operator",
+    "recordLabel": "Announced opening",
+    "lifecycle": "announced",
+    "reviewedAt": "2026-09-05",
+    "evidence": [
+      {
+        "url": "https://ritualcoffee.com/news/our-new-cafe/",
+        "publishedAt": "2026-03-05",
+        "checkedAt": "2026-09-05",
+        "type": "operator"
+      }
+    ],
+    "arrivalLabel": "October 2026 · operator target",
+    "arrival": {
+      "start": "2026-10-01",
+      "end": "2026-10-31",
+      "precision": "month",
+      "label": "October 2026 · operator target",
+      "sourceUrl": "https://ritualcoffee.com/news/our-new-cafe/"
+    }
+  },
+  {
+    "id": "dantes",
+    "name": "Dante’s Inferno & Paradiso",
+    "address": "1815 Market St",
+    "kindOverride": "restaurant",
+    "category": "Food & shops",
+    "summary": "Supper club, nightlife venue and rooftop lounge. The operator now targets fall 2026, superseding earlier reporting that said 2025.",
+    "evidenceType": "operator",
+    "recordLabel": "Announced project",
+    "lifecycle": "announced",
+    "reviewedAt": "2026-09-05",
+    "evidence": [
+      {
+        "url": "https://dantesdontlookdown.com/about",
+        "publishedAt": null,
+        "checkedAt": "2026-09-05",
+        "type": "operator"
+      }
+    ],
+    "arrivalLabel": "Fall 2026 · operator target",
+    "arrival": {
+      "start": "2026-09-01",
+      "end": "2026-11-30",
+      "precision": "season",
+      "label": "Fall 2026 · operator target",
+      "sourceUrl": "https://dantesdontlookdown.com/about"
+    },
+    "mergeInto": "pl-8f07ec958c7c"
+  },
+  {
+    "id": "art-water",
+    "name": "Art + Water · Pier 29",
+    "address": "Pier 29, The Embarcadero",
+    "kindOverride": "other",
+    "category": "Other places",
+    "summary": "Artist workspace, exhibition space and a café planned for Pier 29. Reporting targets late summer or fall 2026.",
+    "evidenceType": "reporting",
+    "recordLabel": "Announced opening",
+    "lifecycle": "announced",
+    "reviewedAt": "2026-09-05",
+    "evidence": [
+      {
+        "url": "https://sf.eater.com/restaurant-news/208936/san-francisco-pier-29-dave-eggers-mokhtar-alkhanshali-art-water",
+        "publishedAt": null,
+        "checkedAt": "2026-09-05",
+        "type": "reporting"
+      },
+      {
+        "url": "https://artpluswater.org/work-with-us/",
+        "checkedAt": "2026-09-05",
+        "type": "operator"
+      }
+    ],
+    "arrivalLabel": "Late summer / fall 2026 · reported target",
+    "arrival": {
+      "start": "2026-08-01",
+      "end": "2026-11-30",
+      "precision": "month",
+      "label": "Late summer / fall 2026 · reported target",
+      "sourceUrl": "https://sf.eater.com/restaurant-news/208936/san-francisco-pier-29-dave-eggers-mokhtar-alkhanshali-art-water"
+    }
+  },
+  {
+    "id": "tt-geary",
+    "name": "T&T Supermarket · Geary",
+    "address": "2675 Geary Blvd",
+    "kindOverride": "retail",
+    "category": "Food & shops",
+    "summary": "Asian supermarket planned for San Francisco City Center. Earlier announcements said winter 2026; newer coverage carried on the operator’s newsroom says by year-end.",
+    "evidenceType": "operator-newsroom",
+    "recordLabel": "Announced opening",
+    "lifecycle": "announced",
+    "reviewedAt": "2026-09-05",
+    "evidence": [
+      {
+        "url": "https://www.tntsupermarket.us/aboutus/newsroom/104",
+        "publishedAt": null,
+        "checkedAt": "2026-09-05",
+        "type": "operator-newsroom"
+      },
+      {
+        "url": "https://www.prnewswire.com/news-releases/tt-supermarket-expands-to-san-francisco-302414506.html",
+        "publishedAt": "2025-03-28",
+        "checkedAt": "2026-09-05",
+        "type": "operator",
+        "claim": "Earlier target: winter 2026"
+      }
+    ],
+    "arrivalLabel": "By end of 2026 · reported target",
+    "arrival": {
+      "start": "2026-01-01",
+      "end": "2026-12-31",
+      "precision": "year",
+      "label": "By end of 2026 · reported target",
+      "sourceUrl": "https://www.tntsupermarket.us/aboutus/newsroom/104"
+    }
+  }
+]

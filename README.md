@@ -2,6 +2,10 @@
 
 A map-first publication of upcoming San Francisco projects, colored by published timing.
 
+## Update this project
+
+Start with [the exact pipeline and update runbook](docs/DATA-PIPELINE.md) and [source register](docs/SOURCES.md). `npm run data:refresh` rebuilds the structured sources and reviewed catalog. No scheduled refresh is enabled.
+
 ## Data
 
 `public/projects.json` contains the complete assembled snapshot from:
@@ -9,13 +13,13 @@ A map-first publication of upcoming San Francisco projects, colored by published
 - MOHCD Affordable Housing Pipeline (`aaxw-2cb8`)
 - SFCTA MyStreetSF project-location feed
 
-Run `python3 scripts/sync.py` to refresh all three sources. It checks Socrata pagination counts, downloads source metadata, and assembles the output. Run `npm run build` and publish a new version after refreshing. This publication does not run an automatic refresh schedule.
+Run `npm run data:refresh` to refresh these three sources plus business registrations and building permits. It checks Socrata pagination counts, downloads source metadata, and assembles the output. Run `npm run build` and publish a new version after refreshing. This publication does not run an automatic refresh schedule.
 
-The snapshot is not comprehensive coverage of every future change in SF. Standalone business openings, parks, utility work and schools require additional sources. California ABC's CSV download returned HTTP 403 in both bounded retrieval attempts, so it is not included. Feed dates and these gaps are visible in the interface.
+The snapshot is not comprehensive coverage of every future change in SF. Reviewed business announcements and a separate registration/permit lead catalog supplement these feeds. Parks, utility work and schools require additional sources. California ABC's CSV download returned HTTP 403 in both bounded retrieval attempts, so it is not included. Feed dates and these gaps are visible in the interface.
 
 Housing construction completion and transportation open-for-use estimates are preserved as separate date kinds. No timing is inferred from permit stage. Elapsed dates are shown separately from future arrivals. Coordinates must lie in the SF map bounds; unlocated projects remain in search. Transportation lines and multiple sites retain their geometry. Completed/inactive transport records are excluded. Affordable housing merges into a planning project only when its planning case matches a unique entry. Additional cross-source duplicates can remain; raw feed identifiers are retained for audit.
 
-Category labels use reported housing-unit fields and keyword rules, not a separately validated AI classifier. Project descriptions are published source text. Evidence extraction from supporting PDFs and broader entity resolution are future work, not claimed capabilities.
+Category labels use reported housing-unit fields and keyword rules, not a separately validated AI classifier. City descriptions are published source text; announcement summaries are reviewed factual abstracts. Evidence extraction from supporting PDFs and broader entity resolution are future work, not claimed capabilities.
 
 ## Checks
 
@@ -38,7 +42,7 @@ Rendering: project icons use one MapLibre symbol layer and a fixed shared icon a
 
 Business-kind filters and icons infer proposed uses from record descriptions, prefer change-of-use destinations, and retain an Other / mixed use fallback. These classifications are heuristic, not verified business openings. Timing markers use solid colored backgrounds for dated records and white/gray for unknown dates. The legend is clickable.
 
-Restaurant records were reviewed on 2026-09-04. `lib/project-details.json` preserves curated names, summaries, record labels, classification corrections and supporting URLs separately from the refreshed city snapshot. All 21 former restaurant matches are covered. Three office conversions and two non-restaurant projects are reclassified. Existing businesses, alterations, related permits and already-open venues remain visible with explicit labels; they are not confirmed new openings. Original descriptions remain expandable. Seasonal operator targets are shown as text, not fabricated exact dates. Other business records still require enrichment; coverage is not an exhaustive opening directory.
+Restaurant records were reviewed on 2026-09-04. `lib/project-details.json` preserves curated names, summaries, record labels, classification corrections and supporting URLs separately from the refreshed city snapshot. All 21 former restaurant matches are covered. Three office conversions and two non-restaurant projects are reclassified. Existing businesses, alterations and related permits appear in the lead view; already-open venues appear only in the all-records view, with explicit labels; they are not confirmed new openings. Original descriptions remain expandable. Published month, season and year targets are stored as date ranges and participate in every time filter they overlap; no exact opening date is fabricated. Other business records still require enrichment; coverage is not an exhaustive opening directory.
 
 ## Run locally / deploy
 

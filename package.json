@@ -13,7 +13,10 @@
     "format": "oxfmt",
     "prebuild": "node scripts/copy-map-worker.mjs",
     "predev": "node scripts/copy-map-worker.mjs",
-    "test": "node --experimental-strip-types --test tests/*.test.mjs"
+    "test": "node --experimental-strip-types --test tests/*.test.mjs",
+    "data:refresh": "python3 scripts/sync.py",
+    "data:build": "python3 scripts/build_catalog.py",
+    "data:geocode": "python3 scripts/geocode_catalog.py"
   },
   "dependencies": {
     "@base-ui/react": "1.7.0",

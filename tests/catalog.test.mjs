@@ -1,0 +1,7 @@
+import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';
+const load=p=>JSON.parse(fs.readFileSync(new URL('../'+p,import.meta.url)));
+const p=load('public/projects.json').projects,l=load('public/business-leads.json').projects;
+test('announcements have evidence-backed ranges and preserve the original Dante ID',()=>{const a=p.filter(x=>x.lifecycle==='announced');assert.ok(a.length>=16);for(const x of a){assert.ok(x.evidence.length);assert.ok(x.arrival.sourceUrl);assert.ok(x.arrival.start<=x.arrival.end);assert.equal(x.date,null);}assert.equal(a.filter(x=>x.name.includes('Dante’s Inferno')).length,1);assert.ok(a.some(x=>x.id==='pl-8f07ec958c7c'));});
+test('lead imports never turn registration or permit timestamps into arrival dates',()=>{assert.ok(l.length>10000);for(const x of l){assert.equal(x.lifecycle,'lead');assert.equal(x.date,null);assert.equal(x.arrival,undefined);assert.ok(x.sources.length);}});
+test('stable IDs are unique and mapped positions stay inside SF bounds',()=>{const all=[...p,...l];assert.equal(new Set(all.map(x=>x.id)).size,all.length);for(const x of all)for(const [lon,lat] of x.locations){assert.ok(lon>=-122.53&&lon<=-122.34&&lat>=37.70&&lat<=37.84);}});
+test('published leads omit ownership and mailing fields',()=>{for(const x of l)for(const k of ['ownership_name','mailing_address_1','mail_city','certificate_number'])assert.equal(k in x,false);});

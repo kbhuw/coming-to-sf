@@ -1,0 +1,178 @@
+{
+  "5114 3rd St": {
+    "coordinates": [
+      -122.391981623318,
+      37.732133752542
+    ],
+    "matchedAddress": "5114 3rd St, San Francisco, California, 94124",
+    "score": 100,
+    "provider": "Esri World Geocoding",
+    "checkedAt": "2026-09-05",
+    "approximate": true
+  },
+  "683 Geary St": {
+    "coordinates": [
+      -122.414520058043,
+      37.786402594199
+    ],
+    "matchedAddress": "683 Geary St, San Francisco, California, 94102",
+    "score": 100,
+    "provider": "Esri World Geocoding",
+    "checkedAt": "2026-09-05",
+    "approximate": true
+  },
+  "3349 23rd St": {
+    "coordinates": [
+      -122.419475858295,
+      37.753651145731
+    ],
+    "matchedAddress": "3349 23rd St, San Francisco, California, 94110",
+    "score": 100,
+    "provider": "Esri World Geocoding",
+    "checkedAt": "2026-09-05",
+    "approximate": true
+  },
+  "2001 Fillmore St": {
+    "coordinates": [
+      -122.433944112823,
+      37.788060576556
+    ],
+    "matchedAddress": "2001 Fillmore St, San Francisco, California, 94115",
+    "score": 100,
+    "provider": "Esri World Geocoding",
+    "checkedAt": "2026-09-05",
+    "approximate": true
+  },
+  "2065 Polk St": {
+    "coordinates": [
+      -122.421936198334,
+      37.795746697949
+    ],
+    "matchedAddress": "2065 Polk St, San Francisco, California, 94109",
+    "score": 100,
+    "provider": "Esri World Geocoding",
+    "checkedAt": "2026-09-05",
+    "approximate": true
+  },
+  "680A 2nd St": {
+    "coordinates": [
+      -122.39123177826,
+      37.78069682316
+    ],
+    "matchedAddress": "680A 2nd St, San Francisco, California, 94107",
+    "score": 100,
+    "provider": "Esri World Geocoding",
+    "checkedAt": "2026-09-05",
+    "approximate": true
+  },
+  "185 Berry St": {
+    "coordinates": [
+      -122.392120092358,
+      37.77658478719
+    ],
+    "matchedAddress": "185 Berry St, San Francisco, California, 94107",
+    "score": 100,
+    "provider": "Esri World Geocoding",
+    "checkedAt": "2026-09-05",
+    "approximate": true
+  },
+  "1160 Howard St": {
+    "coordinates": [
+      -122.410979206865,
+      37.777054173768
+    ],
+    "matchedAddress": "1160 Howard St, San Francisco, California, 94103",
+    "score": 100,
+    "provider": "Esri World Geocoding",
+    "checkedAt": "2026-09-05",
+    "approximate": true
+  },
+  "1838 Union St": {
+    "coordinates": [
+      -122.429703540369,
+      37.798059642221
+    ],
+    "matchedAddress": "1838 Union St, San Francisco, California, 94123",
+    "score": 100,
+    "provider": "Esri World Geocoding",
+    "checkedAt": "2026-09-05",
+    "approximate": true
+  },
+  "2360 Polk St": {
+    "coordinates": [
+      -122.422060921053,
+      37.798628060985
+    ],
+    "matchedAddress": "2360 Polk St, San Francisco, California, 94109",
+    "score": 100,
+    "provider": "Esri World Geocoding",
+    "checkedAt": "2026-09-05",
+    "approximate": true
+  },
+  "2139A Polk St": {
+    "coordinates": [
+      -122.422173490013,
+      37.796487029547
+    ],
+    "matchedAddress": "2139A Polk St, San Francisco, California, 94109",
+    "score": 100,
+    "provider": "Esri World Geocoding",
+    "checkedAt": "2026-09-05",
+    "approximate": true
+  },
+  "919 Cole St": {
+    "coordinates": [
+      -122.450186229521,
+      37.765465270619
+    ],
+    "matchedAddress": "919 Cole St, San Francisco, California, 94117",
+    "score": 100,
+    "provider": "Esri World Geocoding",
+    "checkedAt": "2026-09-05",
+    "approximate": true
+  },
+  "255 California St": {
+    "coordinates": [
+      -122.399501196295,
+      37.792995841146
+    ],
+    "matchedAddress": "255 California St, San Francisco, California, 94111",
+    "score": 100,
+    "provider": "Esri World Geocoding",
+    "checkedAt": "2026-09-05",
+    "approximate": true
+  },
+  "1815 Market St": {
+    "coordinates": [
+      -122.423818941425,
+      37.771323885662
+    ],
+    "matchedAddress": "1815 Market St, San Francisco, California, 94103",
+    "score": 100,
+    "provider": "Esri World Geocoding",
+    "checkedAt": "2026-09-05",
+    "approximate": true
+  },
+  "Pier 29, The Embarcadero": {
+    "coordinates": [
+      -122.4032,
+      37.8053
+    ],
+    "matchedAddress": "Pier 29",
+    "score": 100,
+    "provider": "Esri World Geocoding",
+    "checkedAt": "2026-09-05",
+    "approximate": true
+  },
+  "2675 Geary Blvd": {
+    "coordinates": [
+      -122.446575808547,
+      37.782080298188
+    ],
+    "matchedAddress": "2675 Geary Blvd, San Francisco, California, 94118",
+    "score": 100,
+    "provider": "Esri World Geocoding",
+    "checkedAt": "2026-09-05",
+    "approximate": true
+  }
+}

@@ -75,5 +75,5 @@ for r in read('transport'):
     projects.append(p)
 missing=sum(not p['coordinates'] for p in projects)
 out={'retrievedAt':datetime.now(timezone.utc).isoformat(),'sources':sources,'projects':projects,'coverage':{'unmapped':missing,'excludedTransport':closed,'mergedHousing':sum(len(p['sources'])>1 and p['category']=='Housing' for p in projects),'note':'Complete ingestion of these three published feeds; not every future change in SF. Standalone business openings, parks, utilities and schools are not comprehensively covered. Source records can be stale. Date colors use published estimates, never permit-stage predictions.'}}
-(ROOT/'public'/'projects.json').write_text(json.dumps(out,separators=(',',':')))
+(ROOT/'data'/'base-projects.json').write_text(json.dumps(out,separators=(',',':')))
 print('Projects:',len(projects),'Mapped:',len(projects)-missing,'With dates:',sum(bool(p['date']) for p in projects),'Categories:',dict(Counter(p['category'] for p in projects)))
