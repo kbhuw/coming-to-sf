@@ -8,7 +8,7 @@ export default function AgencyProjects(){
  const rows=directory.sources.flatMap(s=>s.records.map(r=>({...r,sourceId:s.id,sourceName:s.name,review:r.review as Review})));
  const items=rows.filter(r=>(source==='all'||r.sourceId===source)&&`${r.name} ${r.summary}`.toLowerCase().includes(query.toLowerCase()));
  return <main className="updates-page">
-  <a href="/">← Back to the map</a>
+  <a href="/coming-to-sf/">← Back to the map</a>
   <h1>Waterfront & school projects</h1>
   <p>Agency project pages collected for review. Some describe ongoing programs or already completed work. These records do not automatically appear as upcoming openings on the map.</p>
   <p className="updates-meta">Collected {directory.retrievedAt.slice(0,10)} · {rows.length} agency records</p>
@@ -27,6 +27,6 @@ export default function AgencyProjects(){
    {r.sourceUpdatedText&&<small>{r.sourceUpdatedText} · page update, not an opening date</small>}
   </article>)}</section>
   {!items.length&&<p>No matching agency records. Try a broader search.</p>}
-  <footer><h2>Coverage</h2>{directory.sources.map(s=><p key={s.id}><a href={s.url}>{s.name}</a>: {s.scope}</p>)}<a href="/civic-directory.json">Download agency records</a> · <a href="/updates">Local reporting</a></footer>
+  <footer><h2>Coverage</h2>{directory.sources.map(s=><p key={s.id}><a href={s.url}>{s.name}</a>: {s.scope}</p>)}<a href="/coming-to-sf/civic-directory.json">Download agency records</a> · <a href="/coming-to-sf/updates">Local reporting</a></footer>
  </main>;
 }

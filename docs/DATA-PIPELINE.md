@@ -162,3 +162,11 @@ The `/agency-projects` page supports text search and agency filtering. These dis
 A second fresh clone of `0df1395`, with no ignored source cache, successfully ran the complete `scripts/sync.py` pipeline, including both news feeds and Port/SFUSD detail collection. `npm ci` installed dependencies from the lockfile. The resulting snapshot contains 3,060 assembled records, including 22 reviewed announcements, plus 10,930 separate business/permit leads; discovery retains 41 headlines and 55 civic directory records. SFMTA now contributes 382 unique URLs with 108 completed, three more completed records than the earlier run. These source changes are retained without treating them as new upcoming projects. The refreshed public artifacts were copied back into the publication checkout.
 
 Verification includes all JavaScript catalog/timing/transport/tile tests, all Python parser tests, a production build, anonymous public JSON downloads, live WebMCP category filtering, retail and fitness time filtering, and a rendered announcement evidence card. Earlier documented browser checks cover address/neighborhood zoom, overlap selection, clear-filter behavior and lead loading. These checks establish the implemented scope; they do not measure a percentage of all future SF openings.
+
+## kush.pw hosting and attribution
+
+The application is built with Next.js `basePath: '/coming-to-sf'`. All direct fetches, worker/tile URLs, public downloads and plain anchor links use that prefix. The Vercel root redirects to the map path. The `kushbhuwalka-web` host project forwards `/coming-to-sf/:path*` to `https://coming-to-sf.vercel.app/coming-to-sf/:path*`; the app remains deployed from this repository. Do not strip the prefix in the host rewrite or route the host's entire `/_next` namespace to this app.
+
+The shared layout includes the linked “made with puffle.ai” badge. `public/puffle-logo.svg` comes from the official `DevelopIQ-ai/puffle-next` public logo asset. No changes to the Puffle marketing site are needed.
+
+The five WebMCP tools remain registered on the map document and operate on the same visible state: `focus_location`, `filter_projects`, `read_map`, `search_projects`, and `open_project`. Verify them on the custom-domain route after changing proxy settings; data, worker and tile requests must remain under `/coming-to-sf/`.
