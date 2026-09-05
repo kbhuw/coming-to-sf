@@ -1,0 +1,158 @@
+{
+  "pl-c09406ff152f": {
+    "name": "Outdoor dining patio · 2214 Mission",
+    "summary": "A proposal to turn a private parking lot into an outdoor dining patio. The record does not identify the operator. This is not evidence of a new restaurant opening.",
+    "recordLabel": "Permit proposal · timing unverified",
+    "kindOverride": "restaurant",
+    "reviewedAt": "2026-09-04"
+  },
+  "pl-c91eb7cf4ca7": {
+    "name": "Bookstore & restaurant · former Hibernia Bank",
+    "summary": "A proposed bookstore, restaurant and events space in the former Social Security office at 22nd and Valencia, with outdoor dining. No trading name or opening date verified.",
+    "recordLabel": "Permit proposal · timing unverified",
+    "kindOverride": "restaurant",
+    "reviewedAt": "2026-09-04",
+    "evidenceUrl": "https://missionlocal.org/2026/01/sf-hibernia-bank-social-security-valencia-street/"
+  },
+  "pl-15601b2479de": {
+    "name": "Rintaro · kitchen & seating expansion",
+    "summary": "The existing Japanese restaurant proposes a rear second-floor addition for kitchen and storage space, plus 18 seats. Rintaro is already operating; the expansion completion date is not published.",
+    "recordLabel": "Existing restaurant · proposed expansion",
+    "kindOverride": "restaurant",
+    "reviewedAt": "2026-09-04"
+  },
+  "pl-c3400fd2f1e2": {
+    "name": "Restaurant alterations · 921 Folsom",
+    "summary": "The permit proposes full restaurant use and a storage mezzanine. The Roll now lists this address on its own website; the old permit has not been matched to a future opening.",
+    "recordLabel": "Existing venue at address · permit unverified",
+    "kindOverride": "restaurant",
+    "reviewedAt": "2026-09-04",
+    "evidenceUrl": "https://therollsf.com/page/contact-us"
+  },
+  "pl-f5e832444581": {
+    "name": "Beach & Jones · proposed food-truck court",
+    "summary": "Five food-truck stalls, pergolas, seating and bathrooms are proposed on a 5,000-square-foot site. Vendor names and an opening date are not verified.",
+    "recordLabel": "Permit proposal · timing unverified",
+    "kindOverride": "restaurant",
+    "reviewedAt": "2026-09-04"
+  },
+  "pl-dbf4e6268bef": {
+    "name": "Wayfare Tavern · already open",
+    "summary": "Tyler Florence’s restaurant moved to 201 Pine Street in spring 2025 and is operating here. The city pipeline still includes the earlier exterior-work permit.",
+    "recordLabel": "Already open · historical permit",
+    "kindOverride": "restaurant",
+    "reviewedAt": "2026-09-04",
+    "evidenceUrl": "https://www.wayfaretavern.com/",
+    "arrivalLabel": "Already open"
+  },
+  "pl-a1c2d643c337": {
+    "name": "101 California · tenant conference center",
+    "summary": "A former frozen-yogurt space would become a 2,450-square-foot conference center for office tenants. This is an office amenity conversion.",
+    "recordLabel": "Office conversion",
+    "kindOverride": "office",
+    "reviewedAt": "2026-09-04"
+  },
+  "pl-defb7bbf0e20": {
+    "name": "Union Street · bar & restaurant patio works",
+    "summary": "Proposed rear patio dining, exit stairs and changes to managers’ quarters at 1969–1979 Union. The permit does not establish a new restaurant name or opening date.",
+    "recordLabel": "Existing premises · alteration proposal",
+    "kindOverride": "restaurant",
+    "reviewedAt": "2026-09-04"
+  },
+  "pl-cb00da25e7ee": {
+    "name": "Restaurant permit revision · 4072 18th",
+    "summary": "A revision addresses removal of a rear structure and changes to a residential floor plan. Poesia operates at this address, but this record does not establish a new Poesia opening.",
+    "recordLabel": "Existing premises · permit revision",
+    "kindOverride": "restaurant",
+    "reviewedAt": "2026-09-04",
+    "evidenceUrl": "https://tableagent.com/san-francisco/poesia/"
+  },
+  "pl-d5c317e31ff2": {
+    "name": "Casements · patio & entertainment proposal",
+    "summary": "The existing restaurant proposes nighttime entertainment and a 1,777-square-foot outdoor area on part of an adjacent parking lot. Completion has not been verified.",
+    "recordLabel": "Existing restaurant · proposed expansion",
+    "kindOverride": "restaurant",
+    "reviewedAt": "2026-09-04"
+  },
+  "pl-ab89dd6d0d52": {
+    "name": "Pollo Campero · proposed expansion",
+    "summary": "The existing restaurant at 2740 Mission proposes expanding into vacant 2744 Mission, adding 2,567 square feet. No completion date is published.",
+    "recordLabel": "Existing restaurant · proposed expansion",
+    "kindOverride": "restaurant",
+    "reviewedAt": "2026-09-04"
+  },
+  "pl-f55dfc9b4a97": {
+    "name": "680 Folsom · office lounge conversion",
+    "summary": "A vacant former restaurant would become a 2,094-square-foot lounge and shared conference space for office employees.",
+    "recordLabel": "Office conversion",
+    "kindOverride": "office",
+    "reviewedAt": "2026-09-04"
+  },
+  "pl-0f49fa17e833": {
+    "name": "Mendell Plaza · proposed restaurant structure",
+    "summary": "A small restaurant structure is proposed on the triangular site at Third and Oakdale, facing Mendell Plaza. No future operator or opening date verified.",
+    "recordLabel": "Permit proposal · timing unverified",
+    "kindOverride": "restaurant",
+    "reviewedAt": "2026-09-04"
+  },
+  "pl-a03108861bd4": {
+    "name": "Restaurant storefront works · 470 Pacific",
+    "summary": "The permit concerns replacement storefronts and restaurant entry doors in Jackson Square. It does not announce a new restaurant or confirm when this work will finish.",
+    "recordLabel": "Existing premises · storefront alterations",
+    "kindOverride": "restaurant",
+    "reviewedAt": "2026-09-04"
+  },
+  "pl-f22af4b07614": {
+    "name": "Clay Theater · restoration & reopening",
+    "summary": "Restoration of the single-screen cinema, including seismic and accessibility improvements, with an accessory restaurant and entertainment use.",
+    "recordLabel": "Proposed cinema reopening",
+    "kindOverride": "other",
+    "reviewedAt": "2026-09-04",
+    "category": "Other places"
+  },
+  "pl-8f07ec958c7c": {
+    "name": "Dante’s Inferno & Paradiso",
+    "summary": "A planned supper club and nightlife venue with a rooftop lounge at 1815 Market. The operator currently targets fall 2026; the older 2025 estimate is superseded.",
+    "recordLabel": "Announced new venue",
+    "kindOverride": "restaurant",
+    "reviewedAt": "2026-09-04",
+    "evidenceUrl": "https://dantesdontlookdown.com/about",
+    "arrivalLabel": "Fall 2026 · operator target"
+  },
+  "pl-ccb652c1680d": {
+    "name": "Dante’s site · additional building proposal",
+    "summary": "A separate 2026 application at 1815–1819 Market proposes a new lower level, expanded rooftop restaurant/bar and a Pearl Street takeout window. Related to the Dante’s site; this application’s own completion timing is unverified.",
+    "recordLabel": "Related permit · not a separate opening",
+    "kindOverride": "restaurant",
+    "reviewedAt": "2026-09-04"
+  },
+  "pl-a61d805265ea": {
+    "name": "Honey Cove Restaurant · proposed opening",
+    "summary": "The application names Honey Cove Restaurant and proposes combining two vacant storefronts at 2573–2575 Mission into one restaurant, with a mezzanine and storefront improvements. Cuisine, operator announcement and opening date are not verified.",
+    "recordLabel": "Named in application · opening unverified",
+    "kindOverride": "restaurant",
+    "reviewedAt": "2026-09-04"
+  },
+  "pl-48599042fd4d": {
+    "name": "160 Spear · office amenity conversion",
+    "summary": "The former Tokyo Express space would become office conference rooms, a lounge, bicycle storage and showers. This is not a restaurant opening.",
+    "recordLabel": "Office conversion",
+    "kindOverride": "office",
+    "reviewedAt": "2026-09-04"
+  },
+  "pl-dd42d9d49d1a": {
+    "name": "Restaurant addition · 4483–4485 Mission",
+    "summary": "A horizontal addition and new mezzanine are proposed for a limited-service restaurant. The available record does not name the business or give an opening date.",
+    "recordLabel": "Permit proposal · timing unverified",
+    "kindOverride": "restaurant",
+    "reviewedAt": "2026-09-04"
+  },
+  "pl-2743654d99e7": {
+    "name": "4100 Third · social-service facility",
+    "summary": "A proposal to convert restaurant and group-housing space into a social-service facility with an outdoor activity area.",
+    "recordLabel": "Social-service conversion",
+    "kindOverride": "other",
+    "reviewedAt": "2026-09-04",
+    "category": "Other places"
+  }
+}
