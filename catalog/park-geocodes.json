@@ -1,0 +1,422 @@
+{
+  "1134": {
+    "query": "Buchanan Street Mall",
+    "coordinates": [
+      -122.428893,
+      37.780463
+    ],
+    "matchedAddress": "Buchanan Street Mall",
+    "score": 100,
+    "provider": "Esri World Geocoding",
+    "checkedAt": "2026-09-05T06:54:19.055282+00:00",
+    "approximate": true,
+    "note": "Named park location only; not project work extent",
+    "sourceUrl": "https://sfrecpark.org/1134/Buchanan-Street-Mall-Renovation-Project"
+  },
+  "1641": {
+    "query": "Buena Vista Park",
+    "coordinates": [
+      -122.441236,
+      37.768679
+    ],
+    "matchedAddress": "Buena Vista Park",
+    "score": 100,
+    "provider": "Esri World Geocoding",
+    "checkedAt": "2026-09-05T06:54:19.516087+00:00",
+    "approximate": true,
+    "note": "Named park location only; not project work extent",
+    "sourceUrl": "https://sfrecpark.org/1641/Buena-Vista-Park-Improvement-Project"
+  },
+  "1820": {
+    "query": "Crocker Amazon Baseball and Softball Fields",
+    "coordinates": null,
+    "matchedAddress": null,
+    "score": null,
+    "provider": "Esri World Geocoding",
+    "checkedAt": "2026-09-05T06:54:19.949115+00:00",
+    "approximate": true,
+    "note": "Named park location only; not project work extent",
+    "sourceUrl": "https://sfrecpark.org/1820/Crocker-Amazon-Baseball-and-Softball-Fie"
+  },
+  "1819": {
+    "query": "Embarcadero Plaza and Sue Bierman Park",
+    "coordinates": null,
+    "matchedAddress": null,
+    "score": null,
+    "provider": "Esri World Geocoding",
+    "checkedAt": "2026-09-05T06:54:20.948040+00:00",
+    "approximate": true,
+    "note": "Named park location only; not project work extent",
+    "sourceUrl": "https://sfrecpark.org/1819/Embarcadero-Plaza-and-Sue-Bierman-Park-R"
+  },
+  "1143": {
+    "query": "Gene Friend Recreation Center",
+    "coordinates": [
+      -122.406392,
+      37.7786665
+    ],
+    "matchedAddress": "Gene Friend Recreation Center",
+    "score": 100,
+    "provider": "Esri World Geocoding",
+    "checkedAt": "2026-09-05T06:54:21.871433+00:00",
+    "approximate": true,
+    "note": "Named park location only; not project work extent",
+    "sourceUrl": "https://sfrecpark.org/1143/Gene-Friend-Recreation-Center"
+  },
+  "1153": {
+    "query": "India Basin Waterfront Park",
+    "coordinates": null,
+    "matchedAddress": null,
+    "score": null,
+    "provider": "Esri World Geocoding",
+    "checkedAt": "2026-09-05T06:54:22.310463+00:00",
+    "approximate": true,
+    "note": "Named park location only; not project work extent",
+    "sourceUrl": "https://sfrecpark.org/1153/India-Basin-Waterfront-Park"
+  },
+  "1505": {
+    "query": "Jackson Playground",
+    "coordinates": [
+      -122.3998,
+      37.7639
+    ],
+    "matchedAddress": "Jackson Playground",
+    "score": 100,
+    "provider": "Esri World Geocoding",
+    "checkedAt": "2026-09-05T06:54:23.241245+00:00",
+    "approximate": true,
+    "note": "Named park location only; not project work extent",
+    "sourceUrl": "https://sfrecpark.org/1505/Jackson-Playground-Improvement-Project"
+  },
+  "1154": {
+    "query": "Japantown Peace Plaza",
+    "coordinates": null,
+    "matchedAddress": null,
+    "score": null,
+    "provider": "Esri World Geocoding",
+    "checkedAt": "2026-09-05T06:54:24.340926+00:00",
+    "approximate": true,
+    "note": "Named park location only; not project work extent",
+    "sourceUrl": "https://sfrecpark.org/1154/Japantown-Peace-Plaza-Renovation-Project"
+  },
+  "1834": {
+    "query": "Jefferson Square ADA Path",
+    "coordinates": null,
+    "matchedAddress": null,
+    "score": null,
+    "provider": "Esri World Geocoding",
+    "checkedAt": "2026-09-05T06:54:25.294694+00:00",
+    "approximate": true,
+    "note": "Named park location only; not project work extent",
+    "sourceUrl": "https://sfrecpark.org/1834/Jefferson-Square-ADA-Path-Improvements"
+  },
+  "1760": {
+    "query": "Kezar Pavilion",
+    "coordinates": [
+      -122.453605,
+      37.767552
+    ],
+    "matchedAddress": "Kezar Pavilion",
+    "score": 100,
+    "provider": "Esri World Geocoding",
+    "checkedAt": "2026-09-05T06:54:25.658267+00:00",
+    "approximate": true,
+    "note": "Named park location only; not project work extent",
+    "sourceUrl": "https://sfrecpark.org/1760/Kezar-Pavilion-Renovation-Project"
+  },
+  "1848": {
+    "query": "Koshland Park",
+    "coordinates": [
+      -122.42719,
+      37.77299
+    ],
+    "matchedAddress": "Koshland Park",
+    "score": 100,
+    "provider": "Esri World Geocoding",
+    "checkedAt": "2026-09-05T06:54:26.017022+00:00",
+    "approximate": true,
+    "note": "Named park location only; not project work extent",
+    "sourceUrl": "https://sfrecpark.org/1848/Koshland-Park-Improvement-Project"
+  },
+  "1568": {
+    "query": "Lake Merced West",
+    "coordinates": null,
+    "matchedAddress": null,
+    "score": 97.01,
+    "provider": "Esri World Geocoding",
+    "checkedAt": "2026-09-05T06:54:26.830827+00:00",
+    "approximate": true,
+    "note": "Rejected road match: Lake Merced Boulevard is not a verified Lake Merced West project location.",
+    "sourceUrl": "https://sfrecpark.org/1568/Lake-Merced-West"
+  },
+  "1160": {
+    "query": "Marina  and Remediation",
+    "coordinates": null,
+    "matchedAddress": null,
+    "score": null,
+    "provider": "Esri World Geocoding",
+    "checkedAt": "2026-09-05T06:54:27.268892+00:00",
+    "approximate": true,
+    "note": "Named park location only; not project work extent",
+    "sourceUrl": "https://sfrecpark.org/1160/Marina-Improvement-and-Remediation-Proje"
+  },
+  "1894": {
+    "query": "Minnie and Lovie Ward Athletic Fields",
+    "coordinates": null,
+    "matchedAddress": null,
+    "score": null,
+    "provider": "Esri World Geocoding",
+    "checkedAt": "2026-09-05T06:54:27.714703+00:00",
+    "approximate": true,
+    "note": "Named park location only; not project work extent",
+    "sourceUrl": "https://sfrecpark.org/1894/Minnie-and-Lovie-Ward-Athletic-Fields-Re"
+  },
+  "1832": {
+    "query": "Mission Bay Future Parks",
+    "coordinates": null,
+    "matchedAddress": null,
+    "score": null,
+    "provider": "Esri World Geocoding",
+    "checkedAt": "2026-09-05T06:54:28.146065+00:00",
+    "approximate": true,
+    "note": "Named park location only; not project work extent",
+    "sourceUrl": "https://sfrecpark.org/1832/Mission-Bay-Future-Parks-Project"
+  },
+  "1833": {
+    "query": "Mission Creek Park South Extension",
+    "coordinates": null,
+    "matchedAddress": null,
+    "score": null,
+    "provider": "Esri World Geocoding",
+    "checkedAt": "2026-09-05T06:54:28.597166+00:00",
+    "approximate": true,
+    "note": "Named park location only; not project work extent",
+    "sourceUrl": "https://sfrecpark.org/1833/Mission-Creek-Park-South-Extension-Proje"
+  },
+  "1172": {
+    "query": "Ocean Beach Climate Adaptation",
+    "coordinates": null,
+    "matchedAddress": null,
+    "score": null,
+    "provider": "Esri World Geocoding",
+    "checkedAt": "2026-09-05T06:54:29.661444+00:00",
+    "approximate": true,
+    "note": "Named park location only; not project work extent",
+    "sourceUrl": "https://sfrecpark.org/1172/Ocean-Beach-Climate-Adaptation-Project"
+  },
+  "1166": {
+    "query": "Portsmouth Square",
+    "coordinates": [
+      -122.4054708,
+      37.7947842
+    ],
+    "matchedAddress": "Portsmouth Square",
+    "score": 100,
+    "provider": "Esri World Geocoding",
+    "checkedAt": "2026-09-05T06:54:30.014231+00:00",
+    "approximate": true,
+    "note": "Named park location only; not project work extent",
+    "sourceUrl": "https://sfrecpark.org/1166/Portsmouth-Square-Improvement-Project"
+  },
+  "1635": {
+    "query": "Rachele Sullivan Park",
+    "coordinates": null,
+    "matchedAddress": null,
+    "score": null,
+    "provider": "Esri World Geocoding",
+    "checkedAt": "2026-09-05T06:54:30.553904+00:00",
+    "approximate": true,
+    "note": "Named park location only; not project work extent",
+    "sourceUrl": "https://sfrecpark.org/1635/Rachele-Sullivan-Park-Project"
+  },
+  "1779": {
+    "query": "Randolph-Bright Mini Park Children’s Play",
+    "coordinates": null,
+    "matchedAddress": null,
+    "score": null,
+    "provider": "Esri World Geocoding",
+    "checkedAt": "2026-09-05T06:54:30.993841+00:00",
+    "approximate": true,
+    "note": "Named park location only; not project work extent",
+    "sourceUrl": "https://sfrecpark.org/1779/Randolph-Bright-Mini-Park-Childrens-Play"
+  },
+  "1804": {
+    "query": "San Francisco Irish Famine Memorial",
+    "coordinates": null,
+    "matchedAddress": null,
+    "score": null,
+    "provider": "Esri World Geocoding",
+    "checkedAt": "2026-09-05T06:54:31.439663+00:00",
+    "approximate": true,
+    "note": "Named park location only; not project work extent",
+    "sourceUrl": "https://sfrecpark.org/1804/San-Francisco-Irish-Famine-Memorial-Proj"
+  },
+  "1751": {
+    "query": "Silver Terrace Children's Play",
+    "coordinates": null,
+    "matchedAddress": null,
+    "score": null,
+    "provider": "Esri World Geocoding",
+    "checkedAt": "2026-09-05T06:54:32.411458+00:00",
+    "approximate": true,
+    "note": "Named park location only; not project work extent",
+    "sourceUrl": "https://sfrecpark.org/1751/Silver-Terrace-Childrens-Play-Improvemen"
+  },
+  "1663": {
+    "query": "South Sunset Clubhouse",
+    "coordinates": null,
+    "matchedAddress": null,
+    "score": null,
+    "provider": "Esri World Geocoding",
+    "checkedAt": "2026-09-05T06:54:33.407999+00:00",
+    "approximate": true,
+    "note": "Named park location only; not project work extent",
+    "sourceUrl": "https://sfrecpark.org/1663/South-Sunset-Clubhouse-Renovation"
+  },
+  "1555": {
+    "query": "Sunset Dunes",
+    "coordinates": [
+      -122.5092891,
+      37.7584921
+    ],
+    "matchedAddress": "Sunset Dunes",
+    "score": 100,
+    "provider": "Esri World Geocoding",
+    "checkedAt": "2026-09-05T06:54:33.765889+00:00",
+    "approximate": true,
+    "note": "Named park location only; not project work extent",
+    "sourceUrl": "https://sfrecpark.org/1555"
+  },
+  "634": {
+    "query": "Twin Peaks Trails  & Promenade",
+    "coordinates": null,
+    "matchedAddress": null,
+    "score": null,
+    "provider": "Esri World Geocoding",
+    "checkedAt": "2026-09-05T06:54:34.238798+00:00",
+    "approximate": true,
+    "note": "Named park location only; not project work extent",
+    "sourceUrl": "https://sfrecpark.org/634/Twin-Peaks-Trails-Improvement-Promenade-"
+  },
+  "1913": {
+    "query": "Golden Gate Park - Blue Heron Boatshed",
+    "coordinates": null,
+    "matchedAddress": null,
+    "score": null,
+    "provider": "Esri World Geocoding",
+    "checkedAt": "2026-09-05T06:54:34.842287+00:00",
+    "approximate": true,
+    "note": "Named park location only; not project work extent",
+    "sourceUrl": "https://sfrecpark.org/1913/Golden-Gate-Park---Blue-Heron-Boatshed"
+  },
+  "1648": {
+    "query": "Golden Gate Park - JFK Access and Safety",
+    "coordinates": null,
+    "matchedAddress": null,
+    "score": null,
+    "provider": "Esri World Geocoding",
+    "checkedAt": "2026-09-05T06:54:35.285690+00:00",
+    "approximate": true,
+    "note": "Named park location only; not project work extent",
+    "sourceUrl": "https://sfrecpark.org/1648/Golden-Gate-Park---JFK-Access-and-Safety"
+  },
+  "1799": {
+    "query": "Golden Gate Park - Senior Center Outdoor Recreation Area",
+    "coordinates": null,
+    "matchedAddress": null,
+    "score": null,
+    "provider": "Esri World Geocoding",
+    "checkedAt": "2026-09-05T06:54:35.745677+00:00",
+    "approximate": true,
+    "note": "Named park location only; not project work extent",
+    "sourceUrl": "https://sfrecpark.org/1799/Golden-Gate-Park---Senior-Center-Outdoor"
+  },
+  "1686": {
+    "query": "McLaren Park - Louis Sutter Playground ADA",
+    "coordinates": null,
+    "matchedAddress": null,
+    "score": null,
+    "provider": "Esri World Geocoding",
+    "checkedAt": "2026-09-05T06:54:36.160249+00:00",
+    "approximate": true,
+    "note": "Named park location only; not project work extent",
+    "sourceUrl": "https://sfrecpark.org/1686/McLaren-Park---Louis-Sutter-Playground-A"
+  },
+  "1854": {
+    "query": "McLaren Park - Louis Sutter Upper Playground",
+    "coordinates": null,
+    "matchedAddress": null,
+    "score": null,
+    "provider": "Esri World Geocoding",
+    "checkedAt": "2026-09-05T06:54:36.575045+00:00",
+    "approximate": true,
+    "note": "Named park location only; not project work extent",
+    "sourceUrl": "https://sfrecpark.org/1854/McLaren-Park---Louis-Sutter-Upper-Playgr"
+  },
+  "1588": {
+    "query": "McLaren Park - Pedestrian, Bike and Streetscape Projects",
+    "coordinates": null,
+    "matchedAddress": null,
+    "score": null,
+    "provider": "Esri World Geocoding",
+    "checkedAt": "2026-09-05T06:54:37.217321+00:00",
+    "approximate": true,
+    "note": "Named park location only; not project work extent",
+    "sourceUrl": "https://sfrecpark.org/1588/McLaren-Park---Pedestrian-Bike-and-Stree"
+  },
+  "1705": {
+    "query": "McLaren Park - Shelley Promenade",
+    "coordinates": null,
+    "matchedAddress": null,
+    "score": null,
+    "provider": "Esri World Geocoding",
+    "checkedAt": "2026-09-05T06:54:37.621346+00:00",
+    "approximate": true,
+    "note": "Named park location only; not project work extent",
+    "sourceUrl": "https://sfrecpark.org/1705/McLaren-Park---Shelley-Promenade-Project"
+  },
+  "631": {
+    "query": "McLaren Park - Trails",
+    "coordinates": null,
+    "matchedAddress": null,
+    "score": null,
+    "provider": "Esri World Geocoding",
+    "checkedAt": "2026-09-05T06:54:38.015146+00:00",
+    "approximate": true,
+    "note": "Named park location only; not project work extent",
+    "sourceUrl": "https://sfrecpark.org/631/McLaren-Park---Trails-Improvement-Projec"
+  },
+  "1164": {
+    "query": "McLaren Park - Vision Plan",
+    "coordinates": null,
+    "matchedAddress": null,
+    "score": null,
+    "provider": "Esri World Geocoding",
+    "checkedAt": "2026-09-05T06:54:38.559017+00:00",
+    "approximate": true,
+    "note": "Named park location only; not project work extent",
+    "sourceUrl": "https://sfrecpark.org/1164/McLaren-Park---Vision-Plan"
+  },
+  "1859": {
+    "query": "McLaren Park - Visitacion Avenue Pedestrian and Bicycle Safety",
+    "coordinates": null,
+    "matchedAddress": null,
+    "score": null,
+    "provider": "Esri World Geocoding",
+    "checkedAt": "2026-09-05T06:54:39.462492+00:00",
+    "approximate": true,
+    "note": "Named park location only; not project work extent",
+    "sourceUrl": "https://sfrecpark.org/1859/McLaren-Park--Visitacion-Avenue-Pedestri"
+  },
+  "1614": {
+    "query": "McLaren Park - Yosemite Creek Daylighting",
+    "coordinates": null,
+    "matchedAddress": null,
+    "score": null,
+    "provider": "Esri World Geocoding",
+    "checkedAt": "2026-09-05T06:54:39.886351+00:00",
+    "approximate": true,
+    "note": "Named park location only; not project work extent",
+    "sourceUrl": "https://sfrecpark.org/1614/McLaren-Park---Yosemite-Creek-Daylightin"
+  }
+}

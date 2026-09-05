@@ -42,4 +42,5 @@ subprocess.run([sys.executable,str(ROOT/'scripts'/'assemble.py')],check=True)
 
 subprocess.run([sys.executable,str(ROOT/'scripts'/'collect_sources.py')],check=True)
 subprocess.run([sys.executable,str(ROOT/'scripts'/'collect_sfmta.py')],check=True)
+subprocess.run([sys.executable,str(ROOT/'scripts'/'collect_parks.py')],check=True)
 subprocess.run([sys.executable,str(ROOT/'scripts'/'build_catalog.py')],check=True)

@@ -15,3 +15,21 @@ test('every collected SFMTA URL remains linked and completed projects are exclud
     if (row.lifecycle === 'opened') assert.equal(matches[0].lifecycle, 'opened');
   }
 });
+
+test('park directory entries survive assembly and explicit completions remain excluded',()=>{
+ const directory=load('public/parks-directory.json');
+ for(const row of directory.records){
+  const project=p.find(x=>x.sources.some(s=>s.source==='parks'&&s.url===row.url));
+  assert.ok(project,row.url);
+  assert.equal(project.category,'Parks & recreation');
+  if(row.completed)assert.equal(project.lifecycle,'opened');
+ }
+});
+test('reviewed transit identity merge preserves old ID and both source links',()=>{
+ const target=p.find(x=>x.id==='tr-SFMTA-110');
+ assert.ok(target.aliases.includes('sfmta-cd29b1e4d2b01c43'));
+ assert.ok(target.sources.some(s=>s.source==='sfmta'));
+ assert.ok(target.sources.some(s=>s.source==='transport'));
+ assert.equal(p.some(x=>x.id==='sfmta-cd29b1e4d2b01c43'),false);
+ assert.ok(p.some(x=>x.id==='pl-2120fe31b63d'));
+});

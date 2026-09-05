@@ -1,0 +1,9 @@
+[
+  {
+    "canonicalId": "tr-SFMTA-110",
+    "memberIds": ["sfmta-cd29b1e4d2b01c43"],
+    "reviewedAt": "2026-09-05",
+    "evidenceUrl": "https://www.sfmta.com/projects/potrero-yard-modernization-project",
+    "reason": "The SFMTA directory page describes the same Potrero Yard transit modernization as SFCTA SFMTA-110. Keep the existing mapped transport ID and its dated source. The Planning housing proposal is retained as a distinct component."
+  }
+]

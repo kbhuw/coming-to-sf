@@ -2,6 +2,7 @@ type RecordLike={kindOverride?:string;category:string;name:string;description:st
 export const BUSINESS_KINDS:Record<string,string>={cafe:'Cafés',restaurant:'Restaurants',bar:'Bars & nightlife',retail:'Retail',cannabis:'Cannabis',health:'Health & clinics',childcare:'Childcare',fitness:'Fitness & wellness',hotel:'Hotels',office:'Offices',storage:'Storage',shops:'Other / mixed use'};
 export function projectKind(p:RecordLike):string{
  if(p.kindOverride)return p.kindOverride;
+ if(p.category==='Parks & recreation')return 'park';
  if(p.category==='Housing')return 'housing';
  if(p.category==='Streets & transit')return 'transit';
  if(p.category!=='Food & shops')return 'other';

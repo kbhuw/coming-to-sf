@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import type { Map as GLMap, GeoJSONSource } from 'maplibre-gl';
-import { ArrowUpRight, Search, MapPin, Layers, LocateFixed, Building2, TrainFront, Store, ArrowRight, X, Info, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Trees, ArrowUpRight, Search, MapPin, Layers, LocateFixed, Building2, TrainFront, Store, ArrowRight, X, Info, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription } from '@/components/ui/sheet';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
@@ -14,7 +14,7 @@ import { MAP_ICONS } from '@/lib/map-icons';
 import { windowFor, matchesWindow, type ArrivalRange } from '@/lib/timing';
 
 type Source = { id: string; name: string; url: string; updated: string|null; records:number; note:string };
-type Project = { id:string; name:string; arrival?:ArrivalRange; lifecycle?:string; evidenceType?:string; evidence?:{url:string;type:string;publishedAt?:string;checkedAt:string;claim?:string}[]; summary?:string; recordLabel?:string; kindOverride?:string; reviewedAt?:string; evidenceUrl?:string; arrivalLabel?:string; address:string; description:string; category:string; coordinates:[number,number]|null; locations:[number,number][]; paths?:[number,number][][]; neighborhood:string; status:string; statusDate:string|null; date:string|null; dateKind:string|null; dateSource:string|null; units?:number|null; affordableUnits?:number|null; sources:{source:string;reference:string;url:string}[] };
+type Project = { id:string; aliases?:string[]; name:string; arrival?:ArrivalRange; lifecycle?:string; evidenceType?:string; evidence?:{url:string;type:string;publishedAt?:string;checkedAt:string;claim?:string}[]; summary?:string; recordLabel?:string; kindOverride?:string; reviewedAt?:string; evidenceUrl?:string; arrivalLabel?:string; address:string; description:string; category:string; coordinates:[number,number]|null; locations:[number,number][]; paths?:[number,number][][]; neighborhood:string; status:string; statusDate:string|null; date:string|null; dateKind:string|null; dateSource:string|null; units?:number|null; affordableUnits?:number|null; sources:{source:string;reference:string;url:string}[] };
 type Data = { projects:Project[]; retrievedAt:string; sources:Source[]; coverage:{unmapped:number; excludedTransport:number;mergedHousing:number;note:string} };
 const WINDOWS = [
   {id:'soon',label:'Next 3 months',color:'#008047',short:'0–3 months'},
@@ -23,9 +23,9 @@ const WINDOWS = [
   {id:'unknown',label:'Date unknown',color:'#688399',short:'Date unknown'},
   {id:'past',label:'Past estimate',color:'#bd303b',short:'Needs update'},
 ];
-const CATEGORIES=['All projects','Housing','Food & shops','Streets & transit','Other places'];
+const CATEGORIES=['All projects','Housing','Food & shops','Streets & transit','Parks & recreation','Other places'];
 function fmt(d:string|null){return d?new Date(d.slice(0,10)+'T12:00:00').toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'}):'Not published';}
-function CategoryIcon({category}:{category:string}){return category==='Housing'?<Building2 size={16}/>:category==='Streets & transit'?<TrainFront size={16}/>:category==='Food & shops'?<Store size={16}/>:<MapPin size={16}/>;}
+function CategoryIcon({category}:{category:string}){return category==='Parks & recreation'?<Trees size={16}/>:category==='Housing'?<Building2 size={16}/>:category==='Streets & transit'?<TrainFront size={16}/>:category==='Food & shops'?<Store size={16}/>:<MapPin size={16}/>;}
 export default function Home(){
   const [data,setData]=useState<Data|null>(null),[loadError,setLoadError]=useState('');
   const [query,setQuery]=useState(''),[category,setCategory]=useState('All projects'),[window,setWindow]=useState('all'),[page,setPage]=useState(0);
@@ -120,7 +120,7 @@ export default function Home(){
     locate:async(q)=>{const known=places.find(p=>p.label===q);if(known)return goToPlace(known);const results=await locate(q);if(results.length===1)return goToPlace(results[0]);return {matches:results,message:results.length?'Choose a returned label with focus_location.':'No SF location found'};},
     filter:async(c,w,k,s)=>{if(s&&['leads','all'].includes(s))await ensureLeads();setScope(s||'projects');setQuery('');setBusinessKind(k||'all');setCategory(c);setWindow(w);setMobileList(false);await new Promise<void>(r=>requestAnimationFrame(()=>requestAnimationFrame(()=>r())));return {category:c,timing:w,businessKind:k||'all',scope:s||'projects'};},
     read:async()=>({selected:selected?.id||null,visibleProjects:filtered.filter(p=>p.locations.some(c=>mapRef.current?.getBounds().contains(c))).slice(0,40).map(p=>({id:p.id,name:p.name,category:p.category,kind:kindLabel(p),date:p.date})),query,category,businessKind,scope,leadState,timing:window,location:placeStatus,zoom:mapRef.current?.getZoom(),total:filtered.length,projects:filtered.slice(0,20).map(p=>({id:p.id,name:p.name,category:p.category,kind:kindLabel(p),date:p.date,summary:p.summary,recordLabel:p.recordLabel,arrivalLabel:p.arrivalLabel,evidenceUrl:p.evidenceUrl,arrival:p.arrival,lifecycle:p.lifecycle,sources:p.sources}))}),
-    open:async(id)=>{const p=dataRef.current?.projects.find(p=>p.id===id);if(!p)throw Error('Project not found');choose(p);await new Promise<void>(resolve=>requestAnimationFrame(()=>requestAnimationFrame(()=>resolve())));return {id:p.id,name:p.name,date:p.date,summary:p.summary,recordLabel:p.recordLabel,arrivalLabel:p.arrivalLabel,evidenceUrl:p.evidenceUrl,arrival:p.arrival,lifecycle:p.lifecycle,sources:p.sources};}
+    open:async(id)=>{const p=dataRef.current?.projects.find(p=>p.id===id||p.aliases?.includes(id));if(!p)throw Error('Project not found');choose(p);await new Promise<void>(resolve=>requestAnimationFrame(()=>requestAnimationFrame(()=>resolve())));return {id:p.id,name:p.name,date:p.date,summary:p.summary,recordLabel:p.recordLabel,arrivalLabel:p.arrivalLabel,evidenceUrl:p.evidenceUrl,arrival:p.arrival,lifecycle:p.lifecycle,sources:p.sources};}
   };
   useEffect(()=>registerMapTools(()=>actions.current),[]);
   const timingCounts=useMemo(()=>Object.fromEntries(WINDOWS.map(w=>[w.id,data?.projects.filter(p=>matchesScope(p)&&(category==='All projects'||p.category===category)&&(category!=='Food & shops'||businessKind==='all'||projectKind(p)===businessKind)&&(!query.trim()||[p.name,p.address,p.neighborhood,p.description,...p.sources.map(s=>s.reference)].join(' ').toLowerCase().includes(query.trim().toLowerCase()))&&matchesWindow(p,w.id,now)).length||0])),[data,now,category,businessKind,query,scope]);
@@ -137,7 +137,7 @@ export default function Home(){
           <small>Address lookup by Esri. Searches aren’t saved.</small>
         </div>
       <label className="timing-filter">Show <select aria-label="Filter by evidence" value={scope} onChange={e=>{setScope(e.target.value);setWindow('all');setBusinessKind('all');setQuery('');}}><option value="projects">Announcements & city projects</option><option value="announced">Announced openings only</option><option value="leads">Unverified business leads</option><option value="all">All records, including already open</option></select></label>
-      <div className="type-filters" aria-label="Filter by project type">{CATEGORIES.map(c=><button key={c} aria-pressed={category===c} onClick={()=>changeCategory(c)}>{c!=='All projects'&&<CategoryIcon category={c}/>}{{'All projects':'All','Housing':'Homes','Food & shops':'Shops','Streets & transit':'Transit','Other places':'Other'}[c]}</button>)}</div>
+      <div className="type-filters" aria-label="Filter by project type">{CATEGORIES.map(c=><button key={c} aria-pressed={category===c} onClick={()=>changeCategory(c)}>{c!=='All projects'&&<CategoryIcon category={c}/>}{{'All projects':'All','Housing':'Homes','Food & shops':'Shops','Streets & transit':'Transit','Parks & recreation':'Parks','Other places':'Other'}[c]}</button>)}</div>
       {category==='Food & shops'&&<label className="timing-filter">Kind <select aria-label="Filter by business kind" value={businessKind} onChange={e=>{setBusinessKind(e.target.value);setWindow('all');}}><option value="all">All kinds</option>{Object.entries(BUSINESS_KINDS).map(([k,label])=>{const count=data?.projects.filter(p=>matchesScope(p)&&p.category==='Food & shops'&&projectKind(p)===k&&(!query.trim()||[p.name,p.address,p.neighborhood,p.description,...p.sources.map(s=>s.reference)].join(' ').toLowerCase().includes(query.trim().toLowerCase()))).length||0;return <option key={k} value={k} disabled={!count}>{label} ({count})</option>;})}</select></label>}
       <label className="timing-filter">When <select aria-label="Filter by arrival time" value={window} onChange={e=>setWindow(e.target.value)}><option value="all">Any time</option>{WINDOWS.map(w=><option key={w.id} value={w.id} disabled={!timingCounts[w.id]}>{w.label} ({timingCounts[w.id]})</option>)}</select></label>
       {query&&<p className="active-search">Search: “{query}” <button onClick={()=>setQuery('')}>Clear search</button></p>}
