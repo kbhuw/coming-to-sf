@@ -17,6 +17,6 @@ This document separates working collectors from research candidates. Actual coun
 | ABC daily / bulk | Not automated: direct HTTP 403 | https://www.abc.ca.gov/licensing/licensing-reports/ |
 | SF Public Health | Candidate, not imported | https://www.sf.gov/check-if-your-project-requires-health-plan-review |
 | Rec & Park | Candidate, not imported | https://sfrecpark.org/468/Park-Improvements |
-| SFMTA | Candidate beyond SFCTA, not imported | https://www.sfmta.com/sfmta-projects |
+| SFMTA | Automated paginated directory + all nine status filters | `collect_sfmta.py`; unverified locations stay searchable without pins |
 
 Never report the number of connected sources as a completeness percentage. Each source covers a different universe. An empty query establishes only that nothing matched this catalog.

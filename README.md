@@ -46,7 +46,7 @@ Restaurant records were reviewed on 2026-09-04. `lib/project-details.json` prese
 
 ## Run locally / deploy
 
-Requires Node.js 22 or newer. Run `npm ci`, then `npm run dev`.
+Requires Node.js 22 or newer. Run `npm ci`, then `npm run dev`. Data refresh also requires Python 3.9+ and `python3 -m pip install -r scripts/requirements.txt`.
 `npm run build` creates a standard Next.js production build. Import this repository into Vercel with the Next.js preset; no environment variables or API keys are required. Pushes to `main` deploy production when connected to Vercel.
 
 City data, geocoding and basemap services retain their respective terms and attribution requirements. MapLibre's worker files are copied from the installed package before each build.

@@ -5,3 +5,13 @@ test('announcements have evidence-backed ranges and preserve the original Dante 
 test('lead imports never turn registration or permit timestamps into arrival dates',()=>{assert.ok(l.length>10000);for(const x of l){assert.equal(x.lifecycle,'lead');assert.equal(x.date,null);assert.equal(x.arrival,undefined);assert.ok(x.sources.length);}});
 test('stable IDs are unique and mapped positions stay inside SF bounds',()=>{const all=[...p,...l];assert.equal(new Set(all.map(x=>x.id)).size,all.length);for(const x of all)for(const [lon,lat] of x.locations){assert.ok(lon>=-122.53&&lon<=-122.34&&lat>=37.70&&lat<=37.84);}});
 test('published leads omit ownership and mailing fields',()=>{for(const x of l)for(const k of ['ownership_name','mailing_address_1','mail_city','certificate_number'])assert.equal(k in x,false);});
+
+test('every collected SFMTA URL remains linked and completed projects are excluded from upcoming', () => {
+  const agency = load('public/sfmta-directory.json');
+  const published = p;
+  for (const row of agency.records) {
+    const matches = published.filter(p => p.sources.some(s => s.source === 'sfmta' && s.url === row.url));
+    assert.equal(matches.length, 1, row.url);
+    if (row.lifecycle === 'opened') assert.equal(matches[0].lifecycle, 'opened');
+  }
+});

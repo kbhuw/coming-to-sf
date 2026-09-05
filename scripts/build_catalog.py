@@ -34,6 +34,21 @@ def main():
    existing=project(id,a['name'],a['address'],a['summary'],a['category'],c,'businesses',a['id']);existing['sources']=[];projects.append(existing);index[id]=existing
   existing.update({k:v for k,v in a.items() if k not in ['id','mergeInto','evidence']});existing['evidence']=a['evidence'];existing['evidenceUrl']=a['evidence'][0]['url'];existing['status']='Announced; opening not yet verified';existing['geocoding']=geocodes.get(a['address'])
   existing['sources'] += [dict(source='announcements',reference='Announcement · '+(e.get('publishedAt') or e['checkedAt']),url=e['url']) for e in a['evidence']]
+ # Attach agency evidence only on an exact, unique normalized project title.
+ agency=read('data/sfmta.json',{})
+ def title_key(name):return re.sub(r'[^a-z0-9]','',name.lower())
+ titles={}
+ for p in projects:titles.setdefault(title_key(p['name']),[]).append(p)
+ agencyMerged=0
+ for r in agency.get('records',[]):
+  candidates=titles.get(title_key(r['name']),[])
+  evidence=dict(source='sfmta',reference=r['status'],url=r['url'])
+  if len(candidates)==1:
+   p=candidates[0];p['sources'].append(evidence);p['agencyStatus']=r['status'];agencyMerged+=1
+   if r['lifecycle']=='opened':p['lifecycle']='opened';p['status']=r['status']
+   continue
+  p=dict(id='sfmta-'+hashlib.sha256(r['url'].encode()).hexdigest()[:16],name=r['name'],address='San Francisco · location not yet verified',description=r['summary'],category='Streets & transit',coordinates=None,locations=[],neighborhood='San Francisco',status=r['status'],statusDate=None,date=None,dateKind=None,dateSource=None,lifecycle=r['lifecycle'],recordLabel='Agency project / program',evidenceType='agency-directory',sources=[evidence])
+  projects.append(p)
  leads=[]; exclusions=Counter()
  for r in read('data/businesses.json',[]):
   n=r.get('self_reported_naics_code','');kind='restaurant' if n.startswith('7225') else 'bar' if n.startswith('7224') else 'hotel' if n.startswith('721') else 'retail' if n.startswith(('44','45')) else 'health' if n.startswith('62') else 'fitness' if n.startswith('71394') else 'shops' if n.startswith(('72','81')) else 'other'
@@ -57,10 +72,12 @@ def main():
   if candidates:p['relatedProjectIds']=candidates;matches.append({'leadId':p['id'],'projectIds':candidates,'method':'normalized address only; not a confirmed match'})
  sources=base['sources']+[{'id':'announcements','name':'Reviewed operator announcements & local reporting','url':'https://github.com/kbhuw/coming-to-sf/tree/main/catalog','updated':max(a['reviewedAt'] for a in read('catalog/announcements.json')),'records':len(read('catalog/announcements.json')),'note':'Manually reviewed evidence. Month/season/year windows preserve uncertainty. This is not a complete index of announcements.'}]
  for key,h in health.items():sources.append({'id':key,'name':h['name'],'url':h.get('url','https://data.sfgov.org'),'updated':h.get('updated'),'records':h.get('records',0),'note':h.get('scope',''),'health':h['status'],'retrievedAt':h.get('retrievedAt')})
+ if agency:sources.append(dict(id='sfmta',name='SFMTA project directory',url=agency['url'],updated=None,records=len(agency['records']),note=agency['scope'],retrievedAt=agency['retrievedAt'],health='ok',pages=agency['pages'],statusPages=agency['statusPages'],unfilteredOmissions=agency['unfilteredOmissions'],completed=agency['completed'],exactTitleMatches=agencyMerged))
  publicHealth={'generatedAt':dt.datetime.now(dt.timezone.utc).isoformat(),'sources':sources,'leadCounts':dict(Counter(p['evidenceType'] for p in leads)),'exclusions':dict(exclusions),'possibleAddressMatches':len(matches),'limitations':['Registration and permit dates are not opening dates.','Business registration import includes all industries; missing industry codes remain Other.','Permit lead selection uses business-use keywords and can include unrelated alterations.','ABC bulk and direct daily imports returned HTTP 403; browser-readable daily reports are not automated yet.','Parks, utilities, schools and neighborhood reporting are not yet comprehensively ingested.']}
  base.update(projects=projects,sources=sources,generatedAt=publicHealth['generatedAt'])
  base['coverage'].update(unmapped=sum(not p['coordinates'] for p in projects),leadRecords=len(leads),announcements=len(read('catalog/announcements.json')),note='City project feeds plus reviewed opening announcements. Additional registrations and permit leads are available separately. Counts reflect these sources, not every future opening in SF. See the coverage ledger for scope and gaps.')
  assert len({p['id'] for p in projects+leads})==len(projects)+len(leads),'Duplicate stable IDs'
+ if agency:save('sfmta-directory.json',agency)
  save('projects.json',base);save('business-leads.json',{'projects':leads,'generatedAt':publicHealth['generatedAt']});save('source-health.json',publicHealth);save('possible-matches.json',matches)
  print(json.dumps({'projects':len(projects),'announcements':base['coverage']['announcements'],'leads':len(leads),'leadCounts':publicHealth['leadCounts'],'excluded':dict(exclusions)}))
 if __name__=='__main__':main()

@@ -41,6 +41,7 @@ Requires Python 3.9+, Node.js 22.13+ and network access. No API keys required.
 
 ```sh
 npm ci
+python3 -m pip install -r scripts/requirements.txt
 npm run data:refresh
 npm test
 npm run build
@@ -92,7 +93,19 @@ Push reviewed changes to `main` on `kbhuw/coming-to-sf`. Vercel automatically bu
 - Announcements are manually reviewed, not automatically discovered or verified daily. No exhaustive claim for all SF openings.
 - ABC: official browser-readable September 3 daily report exists, but Python/direct bulk imports return HTTP 403. A durable permitted collection route is still needed. Do not count this as a connected automated feed.
 - Public Health review is a source candidate; no usable bulk feed connected yet.
-- Rec & Park, SFMTA's own project pages, Public Works, SFPUC, Port, schools and neighborhood reporting need additional adapters/review beyond SFCTA.
+- Rec & Park, Public Works, SFPUC, Port, schools and neighborhood reporting need additional adapters/review beyond SFCTA.
 - Raw permit descriptions may concern minor alterations. Keyword selection is a discovery mechanism.
 - Dates change; elapsed ranges become stale estimates automatically, not 'opened'.
 - The old city source feeds may retain completed records. Only reviewed evidence can override that status.
+
+## SFMTA directory adapter
+
+`collect_sfmta.py` follows every actual next-page link in the unfiltered directory, then traverses every one of the nine agency status filters and retains the URL union. It extracts only project-card elements, excluding navigation and news links. A missing card title, unexpected empty page, pagination cycle or failed HTTP request fails the refresh. Requests have a 35-second timeout and three attempts. Raw HTML is retained in ignored `data/sfmta-pages/`; normalized rows are atomically written to `data/sfmta.json` only after all traversals pass.
+
+The final assembly attaches the official link to an existing record only when its normalized title has exactly one match. Other entries get a stable URL-derived ID. Completed membership removes the record from the default upcoming view, including matched existing records. Stages come from filter membership; an entry with no membership is explicitly unresolved. Programs and studies remain included because the scope is the complete agency project directory. Unverified locations stay unmapped and searchable; directory dates are not converted into opening dates. Counts are not a claim of unique physical construction sites.
+
+Install the pinned parser dependency using `python3 -m pip install -r scripts/requirements.txt`. Run this adapter alone with `python3 scripts/collect_sfmta.py`, then `npm run data:build`. Parser regression checks: `python3 -m unittest discover -s tests -p 'test_*.py'`.
+
+The first traversal exposed six completed URLs missing from the unfiltered pages. Consequently all status partitions are collected, and the discrepancy is retained in metadata. A single traversal is not a transactional guarantee: listing order can change. `--reuse-cache` is a recovery option that reuses raw pages younger than one hour; normal refresh always fetches live pages.
+
+Verified 2026-09-05 UTC: 49 unfiltered pages plus all nine status partitions produced 379 unique URLs; 105 completed. Six completed URLs were absent from the unfiltered traversal. The normalized directory is published as `public/sfmta-directory.json` for independent count/link checks. Raw HTML is not published.
