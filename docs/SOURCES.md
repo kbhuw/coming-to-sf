@@ -20,3 +20,8 @@ This document separates working collectors from research candidates. Actual coun
 | SFMTA | Automated paginated directory + all nine status filters | `collect_sfmta.py`; unverified locations stay searchable without pins |
 
 Never report the number of connected sources as a completeness percentage. Each source covers a different universe. An empty query establishes only that nothing matched this catalog.
+
+| Additional source | Access | Scope |
+|---|---|---|
+| Public Works | Automated directory and published map | All cards/markers; directory status preserved |
+| SFPUC | Automated construction directory and detail milestones | San Francisco section only; cross-boundary projects may be listed by agency |

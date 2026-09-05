@@ -33,3 +33,14 @@ test('reviewed transit identity merge preserves old ID and both source links',()
  assert.equal(p.some(x=>x.id==='sfmta-cd29b1e4d2b01c43'),false);
  assert.ok(p.some(x=>x.id==='pl-2120fe31b63d'));
 });
+
+test('infrastructure sources survive assembly and completion status overrides future targets',()=>{
+ const d=load('public/infrastructure-directory.json');
+ for(const source of d.sources)for(const row of source.records){
+  const project=p.find(x=>x.sources.some(s=>s.source===source.id&&s.url===row.url));
+  assert.ok(project,row.url);
+  assert.equal(project.category,'Utilities & public works');
+  if(row.completed)assert.equal(project.lifecycle,'opened');
+  assert.equal(project.date,null);
+ }
+});

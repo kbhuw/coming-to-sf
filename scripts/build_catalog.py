@@ -2,6 +2,7 @@
 import json,re,hashlib,datetime as dt
 from collections import Counter
 from pathlib import Path
+from arrival_ranges import completion_range
 ROOT=Path(__file__).resolve().parents[1]
 def read(p,default=None):
  f=ROOT/p
@@ -65,6 +66,18 @@ def main():
  for r in parks.get('records',[]):
   key=r['url'].split('/')[3];c=xy(parkGeo.get(key,{}).get('coordinates'))
   projects.append(dict(id='park-'+key,name=r['name'],address=parkGeo.get(key,{}).get('matchedAddress') or 'San Francisco · location not yet verified',description=r['summary'] or 'Park project; consult the linked agency page.',category='Parks & recreation',coordinates=c,locations=[c] if c else [],neighborhood='San Francisco',status='Completed (directory description)' if r['completed'] else 'Listed in active park directory; timing unverified',statusDate=None,date=None,dateKind=None,dateSource=None,lifecycle='opened' if r['completed'] else 'project',recordLabel='Park project / program',evidenceType='agency-directory',geocoding=parkGeo.get(key),sources=[dict(source='parks',reference='Agency project page',url=r['url'])]))
+ infrastructure=read('data/infrastructure.json',{})
+ for source in infrastructure.get('sources',[]):
+  for r in source['records']:
+   c=xy(r.get('coordinates'));id=r.get('id') or source['id']+'-'+hashlib.sha256(r['url'].encode()).hexdigest()[:16]
+   projects.append(dict(id=id,name=r['name'],address='San Francisco · agency map location' if c else 'San Francisco · location not yet verified',description=r['summary'],category='Utilities & public works',coordinates=c,locations=[c] if c else [],neighborhood='San Francisco',status=r['status'],statusDate=None,date=None,dateKind=None,dateSource=None,lifecycle='opened' if r['completed'] else 'project',recordLabel='Agency infrastructure project',evidenceType='agency-directory',agencyMilestones=r.get('facts',{}),sources=[dict(source=source['id'],reference=r['status'],url=r['url'])]))
+ for p in projects:
+  label=p.get('agencyMilestones',{}).get('Construction End')
+  if label:
+   p['arrivalLabel']=label+' · agency construction-end target'
+   p['dateKind']='Estimated construction completion'
+   interval=completion_range(label,p['sources'][0]['url'])
+   if interval:p['arrival']=interval
  leads=[]; exclusions=Counter()
  for r in read('data/businesses.json',[]):
   n=r.get('self_reported_naics_code','');kind='restaurant' if n.startswith('7225') else 'bar' if n.startswith('7224') else 'hotel' if n.startswith('721') else 'retail' if n.startswith(('44','45')) else 'health' if n.startswith('62') else 'fitness' if n.startswith('71394') else 'shops' if n.startswith(('72','81')) else 'other'
@@ -90,10 +103,12 @@ def main():
  for key,h in health.items():sources.append({'id':key,'name':h['name'],'url':h.get('url','https://data.sfgov.org'),'updated':h.get('updated'),'records':h.get('records',0),'note':h.get('scope',''),'health':h['status'],'retrievedAt':h.get('retrievedAt')})
  if agency:sources.append(dict(id='sfmta',name='SFMTA project directory',url=agency['url'],updated=None,records=len(agency['records']),note=agency['scope'],retrievedAt=agency['retrievedAt'],health='ok',pages=agency['pages'],statusPages=agency['statusPages'],unfilteredOmissions=agency['unfilteredOmissions'],completed=agency['completed'],exactTitleMatches=agencyMerged))
  if parks:sources.append(dict(id='parks',name='SF Rec & Park active project directory',url=parks['url'],updated=None,records=len(parks['records']),note=parks['scope'],retrievedAt=parks['retrievedAt'],health='ok',pages=parks['pages']))
- publicHealth={'generatedAt':dt.datetime.now(dt.timezone.utc).isoformat(),'sources':sources,'leadCounts':dict(Counter(p['evidenceType'] for p in leads)),'exclusions':dict(exclusions),'possibleAddressMatches':len(matches),'limitations':['Registration and permit dates are not opening dates.','Business registration import includes all industries; missing industry codes remain Other.','Permit lead selection uses business-use keywords and can include unrelated alterations.','ABC bulk and direct daily imports returned HTTP 403; browser-readable daily reports are not automated yet.','Park directories are connected; detailed phases, utilities, schools and neighborhood reporting remain incomplete.']}
+ for source in infrastructure.get('sources',[]):sources.append(dict(id=source['id'],name=source['name'],url=source['url'],updated=None,records=len(source['records']),note=source['scope'],retrievedAt=infrastructure['retrievedAt'],health='ok'))
+ publicHealth={'generatedAt':dt.datetime.now(dt.timezone.utc).isoformat(),'sources':sources,'leadCounts':dict(Counter(p['evidenceType'] for p in leads)),'exclusions':dict(exclusions),'possibleAddressMatches':len(matches),'limitations':['Registration and permit dates are not opening dates.','Business registration import includes all industries; missing industry codes remain Other.','Permit lead selection uses business-use keywords and can include unrelated alterations.','ABC bulk and direct daily imports returned HTTP 403; browser-readable daily reports are not automated yet.','Park, Public Works and SFPUC directories are connected; detailed phases, schools and neighborhood reporting remain incomplete.']}
  base.update(projects=projects,sources=sources,generatedAt=publicHealth['generatedAt'])
  base['coverage'].update(unmapped=sum(not p['coordinates'] for p in projects),leadRecords=len(leads),announcements=len(read('catalog/announcements.json')),note='City project feeds plus reviewed opening announcements. Additional registrations and permit leads are available separately. Counts reflect these sources, not every future opening in SF. See the coverage ledger for scope and gaps.')
  assert len({p['id'] for p in projects+leads})==len(projects)+len(leads),'Duplicate stable IDs'
+ if infrastructure:save('infrastructure-directory.json',infrastructure)
  if parks:save('parks-directory.json',parks)
  if agency:save('sfmta-directory.json',agency)
  save('projects.json',base);save('business-leads.json',{'projects':leads,'generatedAt':publicHealth['generatedAt']});save('source-health.json',publicHealth);save('possible-matches.json',matches)

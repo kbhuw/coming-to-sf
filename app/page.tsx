@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import type { Map as GLMap, GeoJSONSource } from 'maplibre-gl';
-import { Trees, ArrowUpRight, Search, MapPin, Layers, LocateFixed, Building2, TrainFront, Store, ArrowRight, X, Info, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Wrench, Trees, ArrowUpRight, Search, MapPin, Layers, LocateFixed, Building2, TrainFront, Store, ArrowRight, X, Info, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription } from '@/components/ui/sheet';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
@@ -23,9 +23,9 @@ const WINDOWS = [
   {id:'unknown',label:'Date unknown',color:'#688399',short:'Date unknown'},
   {id:'past',label:'Past estimate',color:'#bd303b',short:'Needs update'},
 ];
-const CATEGORIES=['All projects','Housing','Food & shops','Streets & transit','Parks & recreation','Other places'];
+const CATEGORIES=['All projects','Housing','Food & shops','Streets & transit','Parks & recreation','Utilities & public works','Other places'];
 function fmt(d:string|null){return d?new Date(d.slice(0,10)+'T12:00:00').toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'}):'Not published';}
-function CategoryIcon({category}:{category:string}){return category==='Parks & recreation'?<Trees size={16}/>:category==='Housing'?<Building2 size={16}/>:category==='Streets & transit'?<TrainFront size={16}/>:category==='Food & shops'?<Store size={16}/>:<MapPin size={16}/>;}
+function CategoryIcon({category}:{category:string}){return category==='Utilities & public works'?<Wrench size={16}/>:category==='Parks & recreation'?<Trees size={16}/>:category==='Housing'?<Building2 size={16}/>:category==='Streets & transit'?<TrainFront size={16}/>:category==='Food & shops'?<Store size={16}/>:<MapPin size={16}/>;}
 export default function Home(){
   const [data,setData]=useState<Data|null>(null),[loadError,setLoadError]=useState('');
   const [query,setQuery]=useState(''),[category,setCategory]=useState('All projects'),[window,setWindow]=useState('all'),[page,setPage]=useState(0);
@@ -137,7 +137,7 @@ export default function Home(){
           <small>Address lookup by Esri. Searches aren’t saved.</small>
         </div>
       <label className="timing-filter">Show <select aria-label="Filter by evidence" value={scope} onChange={e=>{setScope(e.target.value);setWindow('all');setBusinessKind('all');setQuery('');}}><option value="projects">Announcements & city projects</option><option value="announced">Announced openings only</option><option value="leads">Unverified business leads</option><option value="all">All records, including already open</option></select></label>
-      <div className="type-filters" aria-label="Filter by project type">{CATEGORIES.map(c=><button key={c} aria-pressed={category===c} onClick={()=>changeCategory(c)}>{c!=='All projects'&&<CategoryIcon category={c}/>}{{'All projects':'All','Housing':'Homes','Food & shops':'Shops','Streets & transit':'Transit','Parks & recreation':'Parks','Other places':'Other'}[c]}</button>)}</div>
+      <div className="type-filters" aria-label="Filter by project type">{CATEGORIES.map(c=><button key={c} aria-pressed={category===c} onClick={()=>changeCategory(c)}>{c!=='All projects'&&<CategoryIcon category={c}/>}{{'All projects':'All','Housing':'Homes','Food & shops':'Shops','Streets & transit':'Transit','Parks & recreation':'Parks','Utilities & public works':'Works','Other places':'Other'}[c]}</button>)}</div>
       {category==='Food & shops'&&<label className="timing-filter">Kind <select aria-label="Filter by business kind" value={businessKind} onChange={e=>{setBusinessKind(e.target.value);setWindow('all');}}><option value="all">All kinds</option>{Object.entries(BUSINESS_KINDS).map(([k,label])=>{const count=data?.projects.filter(p=>matchesScope(p)&&p.category==='Food & shops'&&projectKind(p)===k&&(!query.trim()||[p.name,p.address,p.neighborhood,p.description,...p.sources.map(s=>s.reference)].join(' ').toLowerCase().includes(query.trim().toLowerCase()))).length||0;return <option key={k} value={k} disabled={!count}>{label} ({count})</option>;})}</select></label>}
       <label className="timing-filter">When <select aria-label="Filter by arrival time" value={window} onChange={e=>setWindow(e.target.value)}><option value="all">Any time</option>{WINDOWS.map(w=><option key={w.id} value={w.id} disabled={!timingCounts[w.id]}>{w.label} ({timingCounts[w.id]})</option>)}</select></label>
       {query&&<p className="active-search">Search: “{query}” <button onClick={()=>setQuery('')}>Clear search</button></p>}

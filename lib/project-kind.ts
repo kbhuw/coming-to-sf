@@ -3,6 +3,7 @@ export const BUSINESS_KINDS:Record<string,string>={cafe:'Cafés',restaurant:'Res
 export function projectKind(p:RecordLike):string{
  if(p.kindOverride)return p.kindOverride;
  if(p.category==='Parks & recreation')return 'park';
+ if(p.category==='Utilities & public works')return 'works';
  if(p.category==='Housing')return 'housing';
  if(p.category==='Streets & transit')return 'transit';
  if(p.category!=='Food & shops')return 'other';
